@@ -1,0 +1,172 @@
+{
+  "sample_name": "reentrancy_dao",
+  "source_file": "reentrancy_dao.sol",
+  "total_nodes": 45,
+  "total_edges": 49,
+  "evidence_entries": 34,
+  "node_type_counts": {
+    "Assignment": 4,
+    "CFGEntry": 2,
+    "CFGExit": 2,
+    "CFGNode": 6,
+    "CommitPoint": 1,
+    "Contract": 1,
+    "ExternalCall": 1,
+    "Function": 2,
+    "FunctionCall": 2,
+    "FunctionRef": 1,
+    "Modifier": 2,
+    "Require": 1,
+    "StateRead": 3,
+    "StateVar": 2,
+    "StateWrite": 1,
+    "Stmt": 4,
+    "VersionedState": 10
+  },
+  "relation_counts": {
+    "branchTo": 2,
+    "callsBuiltin": 1,
+    "commitsState": 1,
+    "commitsVar": 1,
+    "containsAssignment": 4,
+    "containsCall": 2,
+    "containsRequire": 1,
+    "containsStmt": 4,
+    "entryOf": 2,
+    "entryPointIs": 2,
+    "exitOf": 2,
+    "flowsToExit": 2,
+    "hasFunction": 2,
+    "hasModifier": 2,
+    "hasNext": 2,
+    "hasStateVar": 2,
+    "inFunction": 6,
+    "nextBlock": 2,
+    "postStateVersion": 1,
+    "preStateVersion": 1,
+    "readsStateVar": 2,
+    "targetsStateVar": 4,
+    "writesStateVar": 1
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 18,
+    "stage2_ir": 5,
+    "stage3_ssa": 11,
+    "stage4_control": 13
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 21,
+    "stage2_ir": 7,
+    "stage3_ssa": 4,
+    "stage4_control": 17
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "reentrancy_dao",
+      "source_file": "reentrancy_dao.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 2,
+        "Function": 2,
+        "Modifier": 2,
+        "Stmt": 4,
+        "Assignment": 4,
+        "FunctionCall": 2,
+        "Require": 1
+      },
+      "edge_counts": {
+        "hasStateVar": 2,
+        "hasFunction": 2,
+        "hasModifier": 2,
+        "containsStmt": 4,
+        "entryPointIs": 2,
+        "hasNext": 2,
+        "containsAssignment": 4,
+        "containsCall": 2,
+        "containsRequire": 1
+      },
+      "functions": [
+        "withdrawAll",
+        "deposit"
+      ],
+      "state_vars": [
+        "credit",
+        "balance"
+      ],
+      "original_contract_name": "ReentrancyDAO"
+    },
+    "stage2_ir": {
+      "sample_name": "reentrancy_dao",
+      "source_file": "reentrancy_dao.sol",
+      "ir_file": "reentrancy_dao_ir.txt",
+      "node_counts": {
+        "StateRead": 3,
+        "ExternalCall": 1,
+        "StateWrite": 1
+      },
+      "edge_counts": {
+        "readsStateVar": 2,
+        "targetsStateVar": 4,
+        "writesStateVar": 1
+      },
+      "external_calls": 1,
+      "internal_calls": 0,
+      "state_writes": 1,
+      "state_reads": 3,
+      "raw_ir_blocks": 11
+    },
+    "stage3_ssa": {
+      "sample_name": "reentrancy_dao",
+      "source_file": "reentrancy_dao.sol",
+      "ssa_file": "reentrancy_dao_ssa.txt",
+      "node_counts": {
+        "VersionedState": 10,
+        "CommitPoint": 1
+      },
+      "edge_counts": {
+        "commitsVar": 1,
+        "preStateVersion": 1,
+        "postStateVersion": 1,
+        "commitsState": 1
+      },
+      "raw_ssa_blocks": 11,
+      "version_states": 10,
+      "commit_points": 1,
+      "linked_statewrites": 1
+    },
+    "stage4_control": {
+      "sample_name": "reentrancy_dao",
+      "source_file": "reentrancy_dao.sol",
+      "functions": 2,
+      "cfg_functions_found": 2,
+      "cfg_nodes": 10,
+      "cfg_edges": 16,
+      "callgraph_edges": 1,
+      "conditional_nodes": 2,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_dao\\cfg__reentrancy_dao.sol-ReentrancyDAO-deposit().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_dao\\cfg__reentrancy_dao.sol-ReentrancyDAO-withdrawAll().dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_dao\\call-graph__reentrancy_dao.sol.ReentrancyDAO.call-graph.dot",
+      "actual_contract_name": "ReentrancyDAO"
+    },
+    "stage5_highlevel": {
+      "sample_name": "reentrancy_dao",
+      "source_file": "reentrancy_dao.sol",
+      "external_call_sites": 0,
+      "critical_state_writes": 0,
+      "state_guards": 0,
+      "call_before_effect": 0,
+      "reentrancy_candidates": 0,
+      "functions_with_candidates": []
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 0,
+    "critical_state_writes": 0,
+    "state_guards": 0,
+    "call_before_effect": 0,
+    "reentrancy_candidates": 0,
+    "functions_with_candidates": []
+  }
+}

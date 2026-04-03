@@ -1,0 +1,167 @@
+{
+  "sample_name": "Reentrancy_OWASP",
+  "source_file": "Reentrancy_OWASP.sol",
+  "total_nodes": 35,
+  "total_edges": 44,
+  "evidence_entries": 28,
+  "node_type_counts": {
+    "Assignment": 2,
+    "CFGEntry": 2,
+    "CFGExit": 2,
+    "CFGNode": 4,
+    "CommitPoint": 1,
+    "Contract": 1,
+    "ExternalCall": 1,
+    "Function": 2,
+    "FunctionCall": 1,
+    "FunctionRef": 1,
+    "Require": 2,
+    "StateRead": 3,
+    "StateVar": 1,
+    "StateWrite": 1,
+    "Stmt": 6,
+    "VersionedState": 5
+  },
+  "relation_counts": {
+    "callsBuiltin": 1,
+    "callsExternal": 1,
+    "commitsState": 1,
+    "commitsVar": 1,
+    "containsAssignment": 2,
+    "containsCall": 1,
+    "containsRequire": 2,
+    "containsStmt": 6,
+    "entryOf": 2,
+    "entryPointIs": 2,
+    "exitOf": 2,
+    "hasFunction": 2,
+    "hasNext": 4,
+    "hasStateVar": 1,
+    "inFunction": 4,
+    "nextBlock": 3,
+    "postStateVersion": 1,
+    "preStateVersion": 1,
+    "readsStateVar": 2,
+    "targetsStateVar": 4,
+    "writesStateVar": 1
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 15,
+    "stage2_ir": 5,
+    "stage3_ssa": 6,
+    "stage4_control": 11
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 20,
+    "stage2_ir": 8,
+    "stage3_ssa": 4,
+    "stage4_control": 12
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "Reentrancy_OWASP",
+      "source_file": "Reentrancy_OWASP.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 1,
+        "Function": 2,
+        "Stmt": 6,
+        "Assignment": 2,
+        "Require": 2,
+        "FunctionCall": 1
+      },
+      "edge_counts": {
+        "hasStateVar": 1,
+        "hasFunction": 2,
+        "containsStmt": 6,
+        "entryPointIs": 2,
+        "containsAssignment": 2,
+        "hasNext": 4,
+        "containsRequire": 2,
+        "containsCall": 1
+      },
+      "functions": [
+        "deposit",
+        "withdraw"
+      ],
+      "state_vars": [
+        "balances"
+      ],
+      "original_contract_name": "Solidity_Reentrancy"
+    },
+    "stage2_ir": {
+      "sample_name": "Reentrancy_OWASP",
+      "source_file": "Reentrancy_OWASP.sol",
+      "ir_file": "Reentrancy_OWASP_ir.txt",
+      "node_counts": {
+        "StateWrite": 1,
+        "StateRead": 3,
+        "ExternalCall": 1
+      },
+      "edge_counts": {
+        "writesStateVar": 1,
+        "targetsStateVar": 4,
+        "readsStateVar": 2,
+        "callsExternal": 1
+      },
+      "external_calls": 1,
+      "internal_calls": 0,
+      "state_writes": 1,
+      "state_reads": 3,
+      "raw_ir_blocks": 9
+    },
+    "stage3_ssa": {
+      "sample_name": "Reentrancy_OWASP",
+      "source_file": "Reentrancy_OWASP.sol",
+      "ssa_file": "Reentrancy_OWASP_ssa.txt",
+      "node_counts": {
+        "VersionedState": 5,
+        "CommitPoint": 1
+      },
+      "edge_counts": {
+        "commitsVar": 1,
+        "preStateVersion": 1,
+        "postStateVersion": 1,
+        "commitsState": 1
+      },
+      "raw_ssa_blocks": 9,
+      "version_states": 5,
+      "commit_points": 1,
+      "linked_statewrites": 1
+    },
+    "stage4_control": {
+      "sample_name": "Reentrancy_OWASP",
+      "source_file": "Reentrancy_OWASP.sol",
+      "functions": 2,
+      "cfg_functions_found": 2,
+      "cfg_nodes": 8,
+      "cfg_edges": 11,
+      "callgraph_edges": 1,
+      "conditional_nodes": 0,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\Reentrancy_OWASP\\cfg__Reentrancy_OWASP.sol-Solidity_Reentrancy-deposit().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\Reentrancy_OWASP\\cfg__Reentrancy_OWASP.sol-Solidity_Reentrancy-withdraw().dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\Reentrancy_OWASP\\call-graph__Reentrancy_OWASP.sol.Solidity_Reentrancy.call-graph.dot",
+      "actual_contract_name": "Solidity_Reentrancy"
+    },
+    "stage5_highlevel": {
+      "sample_name": "Reentrancy_OWASP",
+      "source_file": "Reentrancy_OWASP.sol",
+      "external_call_sites": 0,
+      "critical_state_writes": 0,
+      "state_guards": 0,
+      "call_before_effect": 0,
+      "reentrancy_candidates": 0,
+      "functions_with_candidates": []
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 0,
+    "critical_state_writes": 0,
+    "state_guards": 0,
+    "call_before_effect": 0,
+    "reentrancy_candidates": 0,
+    "functions_with_candidates": []
+  }
+}

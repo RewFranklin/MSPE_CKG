@@ -1,0 +1,183 @@
+{
+  "sample_name": "simple_dao",
+  "source_file": "simple_dao.sol",
+  "total_nodes": 44,
+  "total_edges": 56,
+  "evidence_entries": 30,
+  "node_type_counts": {
+    "Assignment": 2,
+    "CFGEntry": 3,
+    "CFGExit": 3,
+    "CFGNode": 2,
+    "CallBeforeEffect": 1,
+    "CommitPoint": 2,
+    "Contract": 1,
+    "CriticalStateWrite": 1,
+    "ExternalCall": 1,
+    "ExternalCallSite": 1,
+    "Function": 3,
+    "FunctionCall": 2,
+    "Modifier": 3,
+    "ReentrancyCandidate": 1,
+    "StateGuard": 1,
+    "StateRead": 4,
+    "StateVar": 1,
+    "StateWrite": 2,
+    "Stmt": 3,
+    "VersionedState": 7
+  },
+  "relation_counts": {
+    "abstractsCall": 1,
+    "abstractsStateWrite": 1,
+    "candidateInFunction": 1,
+    "candidateTargetsState": 1,
+    "commitsState": 2,
+    "commitsVar": 2,
+    "containsAssignment": 2,
+    "containsCall": 2,
+    "containsStmt": 3,
+    "derivedFrom": 1,
+    "entryOf": 3,
+    "entryPointIs": 3,
+    "exitOf": 3,
+    "flowsToExit": 1,
+    "guardedBy": 1,
+    "hasCallBeforeEffect": 1,
+    "hasCriticalWrite": 2,
+    "hasExternalCall": 2,
+    "hasFunction": 3,
+    "hasModifier": 3,
+    "hasStateVar": 1,
+    "inFunction": 2,
+    "postStateVersion": 2,
+    "preStateVersion": 2,
+    "readsStateVar": 3,
+    "targetsStateVar": 7,
+    "writesStateVar": 1
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 15,
+    "stage2_ir": 7,
+    "stage3_ssa": 9,
+    "stage4_control": 11,
+    "stage5_highlevel": 5
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 17,
+    "stage2_ir": 10,
+    "stage3_ssa": 8,
+    "stage4_control": 9,
+    "stage5_highlevel": 12
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "simple_dao",
+      "source_file": "simple_dao.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 1,
+        "Function": 3,
+        "Modifier": 3,
+        "Stmt": 3,
+        "Assignment": 2,
+        "FunctionCall": 2
+      },
+      "edge_counts": {
+        "hasStateVar": 1,
+        "hasFunction": 3,
+        "hasModifier": 3,
+        "containsStmt": 3,
+        "entryPointIs": 3,
+        "containsAssignment": 2,
+        "containsCall": 2
+      },
+      "functions": [
+        "donate",
+        "withdraw",
+        "queryCredit"
+      ],
+      "state_vars": [
+        "credit"
+      ],
+      "original_contract_name": "SimpleDAO"
+    },
+    "stage2_ir": {
+      "sample_name": "simple_dao",
+      "source_file": "simple_dao.sol",
+      "ir_file": "simple_dao_ir.txt",
+      "node_counts": {
+        "StateWrite": 2,
+        "StateRead": 4,
+        "ExternalCall": 1
+      },
+      "edge_counts": {
+        "writesStateVar": 1,
+        "targetsStateVar": 6,
+        "readsStateVar": 3
+      },
+      "external_calls": 1,
+      "internal_calls": 0,
+      "state_writes": 2,
+      "state_reads": 4,
+      "raw_ir_blocks": 9
+    },
+    "stage3_ssa": {
+      "sample_name": "simple_dao",
+      "source_file": "simple_dao.sol",
+      "ssa_file": "simple_dao_ssa.txt",
+      "node_counts": {
+        "VersionedState": 7,
+        "CommitPoint": 2
+      },
+      "edge_counts": {
+        "commitsVar": 2,
+        "preStateVersion": 2,
+        "postStateVersion": 2,
+        "commitsState": 2
+      },
+      "raw_ssa_blocks": 9,
+      "version_states": 7,
+      "commit_points": 2,
+      "linked_statewrites": 2
+    },
+    "stage4_control": {
+      "sample_name": "simple_dao",
+      "source_file": "simple_dao.sol",
+      "functions": 3,
+      "cfg_functions_found": 3,
+      "cfg_nodes": 8,
+      "cfg_edges": 9,
+      "callgraph_edges": 0,
+      "conditional_nodes": 1,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\simple_dao\\cfg__simple_dao.sol-SimpleDAO-donate(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\simple_dao\\cfg__simple_dao.sol-SimpleDAO-queryCredit(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\simple_dao\\cfg__simple_dao.sol-SimpleDAO-withdraw(uint256).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\simple_dao\\call-graph__simple_dao.sol.SimpleDAO.call-graph.dot",
+      "actual_contract_name": "SimpleDAO"
+    },
+    "stage5_highlevel": {
+      "sample_name": "simple_dao",
+      "source_file": "simple_dao.sol",
+      "external_call_sites": 1,
+      "critical_state_writes": 1,
+      "state_guards": 1,
+      "call_before_effect": 1,
+      "reentrancy_candidates": 1,
+      "functions_with_candidates": [
+        "withdraw"
+      ]
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 1,
+    "critical_state_writes": 1,
+    "state_guards": 1,
+    "call_before_effect": 1,
+    "reentrancy_candidates": 1,
+    "functions_with_candidates": [
+      "withdraw"
+    ]
+  }
+}

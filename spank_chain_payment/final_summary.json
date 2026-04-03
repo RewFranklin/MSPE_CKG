@@ -1,0 +1,228 @@
+{
+  "sample_name": "spank_chain_payment",
+  "source_file": "spank_chain_payment.sol",
+  "total_nodes": 751,
+  "total_edges": 990,
+  "evidence_entries": 944,
+  "node_type_counts": {
+    "Assignment": 66,
+    "CFGEntry": 15,
+    "CFGExit": 15,
+    "CFGNode": 49,
+    "CallBeforeEffect": 3,
+    "CommitPoint": 20,
+    "Contract": 1,
+    "CriticalStateWrite": 6,
+    "ExternalCall": 10,
+    "ExternalCallSite": 6,
+    "Function": 13,
+    "FunctionCall": 50,
+    "FunctionRef": 6,
+    "InternalCall": 10,
+    "Modifier": 13,
+    "ReentrancyCandidate": 3,
+    "Require": 57,
+    "StateGuard": 11,
+    "StateRead": 130,
+    "StateVar": 5,
+    "StateWrite": 15,
+    "Stmt": 138,
+    "VersionedState": 109
+  },
+  "relation_counts": {
+    "abstractsCall": 6,
+    "abstractsStateWrite": 6,
+    "branchTo": 8,
+    "callsBuiltin": 27,
+    "callsExternal": 3,
+    "callsInternal": 1,
+    "candidateInFunction": 3,
+    "candidateTargetsState": 3,
+    "commitsState": 15,
+    "commitsVar": 15,
+    "containsAssignment": 66,
+    "containsCall": 50,
+    "containsRequire": 57,
+    "containsStmt": 138,
+    "derivedFrom": 23,
+    "entryOf": 15,
+    "entryPointIs": 13,
+    "exitOf": 15,
+    "flowsToExit": 3,
+    "guardedBy": 15,
+    "hasCallBeforeEffect": 3,
+    "hasCriticalWrite": 16,
+    "hasExternalCall": 6,
+    "hasFunction": 13,
+    "hasModifier": 13,
+    "hasNext": 125,
+    "hasStateVar": 5,
+    "inFunction": 49,
+    "invokesInternal": 1,
+    "nextBlock": 18,
+    "postStateVersion": 15,
+    "preStateVersion": 15,
+    "readsStateVar": 76,
+    "targetsStateVar": 151,
+    "writesStateVar": 2
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 343,
+    "stage2_ir": 165,
+    "stage3_ssa": 129,
+    "stage4_control": 98,
+    "stage5_highlevel": 29
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 480,
+    "stage2_ir": 227,
+    "stage3_ssa": 60,
+    "stage4_control": 136,
+    "stage5_highlevel": 87
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "spank_chain_payment",
+      "source_file": "spank_chain_payment.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 5,
+        "Function": 13,
+        "Modifier": 13,
+        "Stmt": 138,
+        "Require": 57,
+        "FunctionCall": 50,
+        "Assignment": 66
+      },
+      "edge_counts": {
+        "hasStateVar": 5,
+        "hasFunction": 13,
+        "hasModifier": 13,
+        "containsStmt": 138,
+        "entryPointIs": 13,
+        "containsRequire": 57,
+        "containsCall": 50,
+        "hasNext": 125,
+        "containsAssignment": 66
+      },
+      "functions": [
+        "createChannel",
+        "LCOpenTimeout",
+        "joinChannel",
+        "deposit",
+        "consensusCloseChannel",
+        "updateLCstate",
+        "initVCstate",
+        "settleVC",
+        "closeVirtualChannel",
+        "byzantineCloseChannel",
+        "_isContained",
+        "getChannel",
+        "getVirtualChannel"
+      ],
+      "state_vars": [
+        "NAME",
+        "VERSION",
+        "numChannels",
+        "virtualChannels",
+        "Channels"
+      ],
+      "original_contract_name": "LedgerChannel"
+    },
+    "stage2_ir": {
+      "sample_name": "spank_chain_payment",
+      "source_file": "spank_chain_payment.sol",
+      "ir_file": "spank_chain_payment_ir.txt",
+      "node_counts": {
+        "InternalCall": 10,
+        "ExternalCall": 10,
+        "StateRead": 130,
+        "StateWrite": 15
+      },
+      "edge_counts": {
+        "readsStateVar": 76,
+        "targetsStateVar": 145,
+        "callsExternal": 3,
+        "invokesInternal": 1,
+        "writesStateVar": 2
+      },
+      "external_calls": 10,
+      "internal_calls": 10,
+      "state_writes": 15,
+      "state_reads": 130,
+      "raw_ir_blocks": 382
+    },
+    "stage3_ssa": {
+      "sample_name": "spank_chain_payment",
+      "source_file": "spank_chain_payment.sol",
+      "ssa_file": "spank_chain_payment_ssa.txt",
+      "node_counts": {
+        "CommitPoint": 20,
+        "VersionedState": 109
+      },
+      "edge_counts": {
+        "commitsVar": 15,
+        "preStateVersion": 15,
+        "postStateVersion": 15,
+        "commitsState": 15
+      },
+      "raw_ssa_blocks": 382,
+      "version_states": 109,
+      "commit_points": 25,
+      "linked_statewrites": 15
+    },
+    "stage4_control": {
+      "sample_name": "spank_chain_payment",
+      "source_file": "spank_chain_payment.sol",
+      "functions": 15,
+      "cfg_functions_found": 15,
+      "cfg_nodes": 79,
+      "cfg_edges": 108,
+      "callgraph_edges": 28,
+      "conditional_nodes": 27,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-_isContained(bytes32,bytes,bytes32).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-byzantineCloseChannel(bytes32).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-closeVirtualChannel(bytes32,bytes32).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-consensusCloseChannel(bytes32,uint256,uint256[4],string,string).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-createChannel(bytes32,address,uint256,address,uint256[2]).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-deposit(bytes32,address,uint256,bool).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-getChannel(bytes32).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-getVirtualChannel(bytes32).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-initVCstate(bytes32,bytes32,bytes,address,address,uint256[2],uint256[4],string).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-joinChannel(bytes32,uint256[2]).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-LCOpenTimeout(bytes32).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-settleVC(bytes32,bytes32,uint256,address,address,uint256[4],string).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-slitherConstructorConstantVariables().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-slitherConstructorVariables().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\cfg__spank_chain_payment.sol-LedgerChannel-updateLCstate(bytes32,uint256[6],bytes32,string,string).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\spank_chain_payment\\call-graph__spank_chain_payment.sol.LedgerChannel.call-graph.dot",
+      "actual_contract_name": "LedgerChannel"
+    },
+    "stage5_highlevel": {
+      "sample_name": "spank_chain_payment",
+      "source_file": "spank_chain_payment.sol",
+      "external_call_sites": 6,
+      "critical_state_writes": 6,
+      "state_guards": 11,
+      "call_before_effect": 3,
+      "reentrancy_candidates": 3,
+      "functions_with_candidates": [
+        "deposit",
+        "joinChannel"
+      ]
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 6,
+    "critical_state_writes": 6,
+    "state_guards": 11,
+    "call_before_effect": 3,
+    "reentrancy_candidates": 3,
+    "functions_with_candidates": [
+      "deposit",
+      "joinChannel"
+    ]
+  }
+}

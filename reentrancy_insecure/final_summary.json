@@ -1,0 +1,153 @@
+{
+  "sample_name": "reentrancy_insecure",
+  "source_file": "reentrancy_insecure.sol",
+  "total_nodes": 24,
+  "total_edges": 27,
+  "evidence_entries": 18,
+  "node_type_counts": {
+    "Assignment": 1,
+    "CFGEntry": 1,
+    "CFGExit": 1,
+    "CFGNode": 3,
+    "Contract": 1,
+    "ExternalCall": 1,
+    "Function": 1,
+    "FunctionCall": 2,
+    "FunctionRef": 1,
+    "Modifier": 1,
+    "Require": 1,
+    "StateRead": 2,
+    "StateVar": 1,
+    "Stmt": 4,
+    "VersionedState": 3
+  },
+  "relation_counts": {
+    "callsBuiltin": 1,
+    "callsExternal": 1,
+    "containsAssignment": 1,
+    "containsCall": 2,
+    "containsRequire": 1,
+    "containsStmt": 4,
+    "entryOf": 1,
+    "entryPointIs": 1,
+    "exitOf": 1,
+    "hasFunction": 1,
+    "hasModifier": 1,
+    "hasNext": 3,
+    "hasStateVar": 1,
+    "inFunction": 3,
+    "nextBlock": 2,
+    "readsStateVar": 1,
+    "targetsStateVar": 2
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 12,
+    "stage2_ir": 3,
+    "stage3_ssa": 3,
+    "stage4_control": 7
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 15,
+    "stage2_ir": 4,
+    "stage4_control": 8
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "reentrancy_insecure",
+      "source_file": "reentrancy_insecure.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 1,
+        "Function": 1,
+        "Modifier": 1,
+        "Stmt": 4,
+        "FunctionCall": 2,
+        "Require": 1,
+        "Assignment": 1
+      },
+      "edge_counts": {
+        "hasStateVar": 1,
+        "hasFunction": 1,
+        "hasModifier": 1,
+        "containsStmt": 4,
+        "entryPointIs": 1,
+        "hasNext": 3,
+        "containsCall": 2,
+        "containsRequire": 1,
+        "containsAssignment": 1
+      },
+      "functions": [
+        "withdrawBalance"
+      ],
+      "state_vars": [
+        "userBalances"
+      ],
+      "original_contract_name": "Reentrancy_insecure"
+    },
+    "stage2_ir": {
+      "sample_name": "reentrancy_insecure",
+      "source_file": "reentrancy_insecure.sol",
+      "ir_file": "reentrancy_insecure_ir.txt",
+      "node_counts": {
+        "StateRead": 2,
+        "ExternalCall": 1
+      },
+      "edge_counts": {
+        "readsStateVar": 1,
+        "targetsStateVar": 2,
+        "callsExternal": 1
+      },
+      "external_calls": 1,
+      "internal_calls": 0,
+      "state_writes": 0,
+      "state_reads": 2,
+      "raw_ir_blocks": 6
+    },
+    "stage3_ssa": {
+      "sample_name": "reentrancy_insecure",
+      "source_file": "reentrancy_insecure.sol",
+      "ssa_file": "reentrancy_insecure_ssa.txt",
+      "node_counts": {
+        "VersionedState": 3
+      },
+      "edge_counts": {},
+      "raw_ssa_blocks": 6,
+      "version_states": 3,
+      "commit_points": 0,
+      "linked_statewrites": 0
+    },
+    "stage4_control": {
+      "sample_name": "reentrancy_insecure",
+      "source_file": "reentrancy_insecure.sol",
+      "functions": 1,
+      "cfg_functions_found": 1,
+      "cfg_nodes": 5,
+      "cfg_edges": 7,
+      "callgraph_edges": 1,
+      "conditional_nodes": 0,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_insecure\\cfg__reentrancy_insecure.sol-Reentrancy_insecure-withdrawBalance().dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_insecure\\call-graph__reentrancy_insecure.sol.Reentrancy_insecure.call-graph.dot",
+      "actual_contract_name": "Reentrancy_insecure"
+    },
+    "stage5_highlevel": {
+      "sample_name": "reentrancy_insecure",
+      "source_file": "reentrancy_insecure.sol",
+      "external_call_sites": 0,
+      "critical_state_writes": 0,
+      "state_guards": 0,
+      "call_before_effect": 0,
+      "reentrancy_candidates": 0,
+      "functions_with_candidates": []
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 0,
+    "critical_state_writes": 0,
+    "state_guards": 0,
+    "call_before_effect": 0,
+    "reentrancy_candidates": 0,
+    "functions_with_candidates": []
+  }
+}

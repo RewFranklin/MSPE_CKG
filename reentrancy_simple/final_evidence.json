@@ -1,0 +1,248 @@
+{
+  "raw_ir:reentrancy_simple.getBalance.0": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.getBalance(address)",
+    "function_name": "getBalance",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_simple.getBalance.1": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.getBalance(address)",
+    "function_name": "getBalance",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: RETURN\n\t\tExpression: userBalance[u]\n\t\tIRs:\n\t\t\tREF_0(uint256) -> userBalance[u]\n\t\t\tRETURN REF_0\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:reentrancy_simple.getBalance.1.1": {
+    "ref": "raw_ir:reentrancy_simple.getBalance.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_simple.addToBalance.0": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.addToBalance()",
+    "function_name": "addToBalance",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_simple.addToBalance.1": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.addToBalance()",
+    "function_name": "addToBalance",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: userBalance[msg.sender] += msg.value\n\t\tIRs:\n\t\t\tREF_1(uint256) -> userBalance[msg.sender]\n\t\t\tREF_1(-> userBalance) = REF_1 + msg.value\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:reentrancy_simple.addToBalance.1": {
+    "ref": "raw_ir:reentrancy_simple.addToBalance.1",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:reentrancy_simple.addToBalance.1.1": {
+    "ref": "raw_ir:reentrancy_simple.addToBalance.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_simple.withdrawBalance.0": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_simple.withdrawBalance.1": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: IF\n\t\tExpression: ! (msg.sender.call.value(userBalance[msg.sender])())\n\t\tIRs:\n\t\t\tREF_4(uint256) -> userBalance[msg.sender]\n\t\t\tTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_4 \n\t\t\tTMP_2 = UnaryType.BANG TMP_1 \n\t\t\tCONDITION TMP_2\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:reentrancy_simple.withdrawBalance.1": {
+    "ref": "raw_ir:reentrancy_simple.withdrawBalance.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:reentrancy_simple.withdrawBalance.1.1": {
+    "ref": "raw_ir:reentrancy_simple.withdrawBalance.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_simple.withdrawBalance.2": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: THROW\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_simple.withdrawBalance.3": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: END_IF\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_simple.withdrawBalance.4": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: userBalance[msg.sender] = 0\n\t\tIRs:\n\t\t\tREF_5(uint256) -> userBalance[msg.sender]\n\t\t\tREF_5(uint256) (->userBalance) := 0(uint256)\n\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:reentrancy_simple.withdrawBalance.4.1": {
+    "ref": "raw_ir:reentrancy_simple.withdrawBalance.4",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ssa:reentrancy_simple.getBalance.0": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.getBalance(address)",
+    "function_name": "getBalance",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tuserBalance_1(mapping(address => uint256)) := ϕ(['userBalance_3', 'userBalance_0', 'userBalance_6', 'userBalance_1'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_simple.getBalance.1": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.getBalance(address)",
+    "function_name": "getBalance",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: RETURN\n\t\tExpression: userBalance[u]\n\t\tSSA IRs:\n\t\t\tREF_0(uint256) -> userBalance_1[u_1]\n\t\t\tRETURN REF_0\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_simple.addToBalance.0": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.addToBalance()",
+    "function_name": "addToBalance",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tuserBalance_2(mapping(address => uint256)) := ϕ(['userBalance_3', 'userBalance_0', 'userBalance_6', 'userBalance_1'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_simple.addToBalance.1": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.addToBalance()",
+    "function_name": "addToBalance",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: userBalance[msg.sender] += msg.value\n\t\tSSA IRs:\n\t\t\tREF_1(uint256) -> userBalance_2[msg.sender]\n\t\t\tuserBalance_3(mapping(address => uint256)) := ϕ(['userBalance_2'])\n\t\t\tREF_1(-> userBalance_3) = REF_1 + msg.value\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:reentrancy_simple.addToBalance.1__stage3_ssa": {
+    "ref": "raw_ssa:reentrancy_simple.addToBalance.1"
+  },
+  "raw_ssa:reentrancy_simple.withdrawBalance.0": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tuserBalance_4(mapping(address => uint256)) := ϕ(['userBalance_3', 'userBalance_0', 'userBalance_6', 'userBalance_1'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_simple.withdrawBalance.1": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: IF\n\t\tExpression: ! (msg.sender.call.value(userBalance[msg.sender])())\n\t\tSSA IRs:\n\t\t\tREF_4(uint256) -> userBalance_4[msg.sender]\n\t\t\tTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_4 \n\t\t\tuserBalance_5(mapping(address => uint256)) := ϕ(['userBalance_3', 'userBalance_6', 'userBalance_4', 'userBalance_1'])\n\t\t\tTMP_2 = UnaryType.BANG TMP_1 \n\t\t\tCONDITION TMP_2\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_simple.withdrawBalance.2": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: THROW\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_simple.withdrawBalance.3": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: END_IF\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_simple.withdrawBalance.4": {
+    "sample_name": "reentrancy_simple",
+    "function": "Reentrance.withdrawBalance()",
+    "function_name": "withdrawBalance",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: userBalance[msg.sender] = 0\n\t\tSSA IRs:\n\t\t\tREF_5(uint256) -> userBalance_5[msg.sender]\n\t\t\tuserBalance_6(mapping(address => uint256)) := ϕ(['userBalance_5'])\n\t\t\tREF_5(uint256) (->userBalance_6) := 0(uint256)\n\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "cfgnode:reentrancy_simple.reentrancy_simple.withdrawBalance.2": {
+    "sample_name": "reentrancy_simple",
+    "contract_name": "reentrancy_simple",
+    "actual_contract_name": "Reentrance",
+    "function_name": "withdrawBalance",
+    "function_signature": "withdrawBalance()",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: THROW 2\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_simple\\cfg__reentrancy_simple.sol-Reentrance-withdrawBalance().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:reentrancy_simple.reentrancy_simple.withdrawBalance.3": {
+    "sample_name": "reentrancy_simple",
+    "contract_name": "reentrancy_simple",
+    "actual_contract_name": "Reentrance",
+    "function_name": "withdrawBalance",
+    "function_signature": "withdrawBalance()",
+    "dot_node_id": "3",
+    "dot_label": "Node Type: END_IF 3\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_simple\\cfg__reentrancy_simple.sol-Reentrance-withdrawBalance().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  }
+}

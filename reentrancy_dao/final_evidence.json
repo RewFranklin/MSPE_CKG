@@ -1,0 +1,334 @@
+{
+  "raw_ir:reentrancy_dao.withdrawAll.0": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.withdrawAll.1": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: oCredit = credit[msg.sender]\n\t\tIRs:\n\t\t\tREF_0(uint256) -> credit[msg.sender]\n\t\t\toCredit(uint256) := REF_0(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:reentrancy_dao.withdrawAll.1.1": {
+    "ref": "raw_ir:reentrancy_dao.withdrawAll.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.withdrawAll.2": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: IF\n\t\tExpression: oCredit > 0\n\t\tIRs:\n\t\t\tTMP_0(bool) = oCredit > 0\n\t\t\tCONDITION TMP_0\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.withdrawAll.3": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: balance -= oCredit\n\t\tIRs:\n\t\t\tbalance(uint256) = balance - oCredit\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.withdrawAll.4": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: NEW VARIABLE\n\t\tExpression: callResult = msg.sender.call.value(oCredit)()\n\t\tIRs:\n\t\t\tTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \n\t\t\tcallResult(bool) := TMP_2(bool)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:reentrancy_dao.withdrawAll.4": {
+    "ref": "raw_ir:reentrancy_dao.withdrawAll.4",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.withdrawAll.5": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ir_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: require(bool)(callResult)\n\t\tIRs:\n\t\t\tTMP_3(None) = SOLIDITY_CALL require(bool)(callResult)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.withdrawAll.6": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ir_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: EXPRESSION\n\t\tExpression: credit[msg.sender] = 0\n\t\tIRs:\n\t\t\tREF_3(uint256) -> credit[msg.sender]\n\t\t\tREF_3(uint256) (->credit) := 0(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:reentrancy_dao.withdrawAll.6.1": {
+    "ref": "raw_ir:reentrancy_dao.withdrawAll.6",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.withdrawAll.7": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ir_stmt_index": 7,
+    "raw": "\t\tNode[7] Type: END_IF\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.deposit.0": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.deposit()",
+    "function_name": "deposit",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.deposit.1": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.deposit()",
+    "function_name": "deposit",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: credit[msg.sender] += msg.value\n\t\tIRs:\n\t\t\tREF_4(uint256) -> credit[msg.sender]\n\t\t\tREF_4(-> credit) = REF_4 + msg.value\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:reentrancy_dao.deposit.1": {
+    "ref": "raw_ir:reentrancy_dao.deposit.1",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:reentrancy_dao.deposit.1.1": {
+    "ref": "raw_ir:reentrancy_dao.deposit.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_dao.deposit.2": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.deposit()",
+    "function_name": "deposit",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: balance += msg.value\n\t\tIRs:\n\t\t\tbalance(uint256) = balance + msg.value\n\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.withdrawAll.0": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tcredit_1(mapping(address => uint256)) := ϕ(['credit_2', 'credit_4', 'credit_1', 'credit_0'])\n\t\t\tbalance_1(uint256) := ϕ(['balance_2', 'balance_0', 'balance_4'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.withdrawAll.1": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: oCredit = credit[msg.sender]\n\t\tSSA IRs:\n\t\t\tREF_0(uint256) -> credit_1[msg.sender]\n\t\t\toCredit_1(uint256) := REF_0(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.withdrawAll.2": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: IF\n\t\tExpression: oCredit > 0\n\t\tSSA IRs:\n\t\t\tTMP_0(bool) = oCredit_1 > 0\n\t\t\tCONDITION TMP_0\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.withdrawAll.3": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: balance -= oCredit\n\t\tSSA IRs:\n\t\t\tbalance_2(uint256) = balance_1 - oCredit_1\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.withdrawAll.4": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: NEW VARIABLE\n\t\tExpression: callResult = msg.sender.call.value(oCredit)()\n\t\tSSA IRs:\n\t\t\tTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit_1 \n\t\t\tcallResult_1(bool) := TMP_2(bool)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.withdrawAll.5": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ssa_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: require(bool)(callResult)\n\t\tSSA IRs:\n\t\t\tTMP_3(None) = SOLIDITY_CALL require(bool)(callResult_1)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.withdrawAll.6": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ssa_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: EXPRESSION\n\t\tExpression: credit[msg.sender] = 0\n\t\tSSA IRs:\n\t\t\tREF_3(uint256) -> credit_1[msg.sender]\n\t\t\tcredit_2(mapping(address => uint256)) := ϕ(['credit_1'])\n\t\t\tREF_3(uint256) (->credit_2) := 0(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.withdrawAll.7": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.withdrawAll()",
+    "function_name": "withdrawAll",
+    "ssa_stmt_index": 7,
+    "raw": "\t\tNode[7] Type: END_IF\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.deposit.0": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.deposit()",
+    "function_name": "deposit",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tcredit_3(mapping(address => uint256)) := ϕ(['credit_2', 'credit_4', 'credit_1', 'credit_0'])\n\t\t\tbalance_3(uint256) := ϕ(['balance_2', 'balance_0', 'balance_4'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_dao.deposit.1": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.deposit()",
+    "function_name": "deposit",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: credit[msg.sender] += msg.value\n\t\tSSA IRs:\n\t\t\tREF_4(uint256) -> credit_3[msg.sender]\n\t\t\tcredit_4(mapping(address => uint256)) := ϕ(['credit_3'])\n\t\t\tREF_4(-> credit_4) = REF_4 + msg.value\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:reentrancy_dao.deposit.1__stage3_ssa": {
+    "ref": "raw_ssa:reentrancy_dao.deposit.1"
+  },
+  "raw_ssa:reentrancy_dao.deposit.2": {
+    "sample_name": "reentrancy_dao",
+    "function": "ReentrancyDAO.deposit()",
+    "function_name": "deposit",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: balance += msg.value\n\t\tSSA IRs:\n\t\t\tbalance_4(uint256) = balance_3 + msg.value\n\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "cfgnode:reentrancy_dao.reentrancy_dao.deposit.2": {
+    "sample_name": "reentrancy_dao",
+    "contract_name": "reentrancy_dao",
+    "actual_contract_name": "ReentrancyDAO",
+    "function_name": "deposit",
+    "function_signature": "deposit()",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: EXPRESSION 2\n\nEXPRESSION:\nbalance += msg.value\n\nIRs:\nbalance(uint256) = balance + msg.value",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_dao\\cfg__reentrancy_dao.sol-ReentrancyDAO-deposit().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:reentrancy_dao.reentrancy_dao.withdrawAll.2": {
+    "sample_name": "reentrancy_dao",
+    "contract_name": "reentrancy_dao",
+    "actual_contract_name": "ReentrancyDAO",
+    "function_name": "withdrawAll",
+    "function_signature": "withdrawAll()",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: IF 2\n\nEXPRESSION:\noCredit > 0\n\nIRs:\nTMP_0(bool) = oCredit > 0\nCONDITION TMP_0",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_dao\\cfg__reentrancy_dao.sol-ReentrancyDAO-withdrawAll().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:reentrancy_dao.reentrancy_dao.withdrawAll.3": {
+    "sample_name": "reentrancy_dao",
+    "contract_name": "reentrancy_dao",
+    "actual_contract_name": "ReentrancyDAO",
+    "function_name": "withdrawAll",
+    "function_signature": "withdrawAll()",
+    "dot_node_id": "3",
+    "dot_label": "Node Type: EXPRESSION 3\n\nEXPRESSION:\nbalance -= oCredit\n\nIRs:\nbalance(uint256) = balance - oCredit",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_dao\\cfg__reentrancy_dao.sol-ReentrancyDAO-withdrawAll().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:reentrancy_dao.reentrancy_dao.withdrawAll.4": {
+    "sample_name": "reentrancy_dao",
+    "contract_name": "reentrancy_dao",
+    "actual_contract_name": "ReentrancyDAO",
+    "function_name": "withdrawAll",
+    "function_signature": "withdrawAll()",
+    "dot_node_id": "4",
+    "dot_label": "Node Type: NEW VARIABLE 4\n\nEXPRESSION:\ncallResult = msg.sender.call.value(oCredit)()\n\nIRs:\nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \ncallResult(bool) := TMP_2(bool)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_dao\\cfg__reentrancy_dao.sol-ReentrancyDAO-withdrawAll().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:reentrancy_dao.reentrancy_dao.withdrawAll.5": {
+    "sample_name": "reentrancy_dao",
+    "contract_name": "reentrancy_dao",
+    "actual_contract_name": "ReentrancyDAO",
+    "function_name": "withdrawAll",
+    "function_signature": "withdrawAll()",
+    "dot_node_id": "5",
+    "dot_label": "Node Type: EXPRESSION 5\n\nEXPRESSION:\nrequire(bool)(callResult)\n\nIRs:\nTMP_3(None) = SOLIDITY_CALL require(bool)(callResult)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_dao\\cfg__reentrancy_dao.sol-ReentrancyDAO-withdrawAll().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:reentrancy_dao.reentrancy_dao.withdrawAll.7": {
+    "sample_name": "reentrancy_dao",
+    "contract_name": "reentrancy_dao",
+    "actual_contract_name": "ReentrancyDAO",
+    "function_name": "withdrawAll",
+    "function_signature": "withdrawAll()",
+    "dot_node_id": "7",
+    "dot_label": "Node Type: END_IF 7\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_dao\\cfg__reentrancy_dao.sol-ReentrancyDAO-withdrawAll().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  }
+}
