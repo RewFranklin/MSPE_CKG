@@ -1,0 +1,168 @@
+{
+  "sample_name": "etherbank",
+  "source_file": "etherbank.sol",
+  "total_nodes": 39,
+  "total_edges": 47,
+  "evidence_entries": 30,
+  "node_type_counts": {
+    "Assignment": 2,
+    "CFGEntry": 3,
+    "CFGExit": 3,
+    "CFGNode": 3,
+    "CommitPoint": 1,
+    "Contract": 1,
+    "ExternalCall": 1,
+    "Function": 3,
+    "FunctionCall": 2,
+    "Modifier": 3,
+    "StateRead": 4,
+    "StateVar": 1,
+    "StateWrite": 1,
+    "Stmt": 5,
+    "VersionedState": 6
+  },
+  "relation_counts": {
+    "branchTo": 2,
+    "callsExternal": 1,
+    "commitsState": 1,
+    "commitsVar": 1,
+    "containsAssignment": 2,
+    "containsCall": 2,
+    "containsStmt": 5,
+    "entryOf": 3,
+    "entryPointIs": 3,
+    "exitOf": 3,
+    "flowsToExit": 1,
+    "hasFunction": 3,
+    "hasModifier": 3,
+    "hasNext": 2,
+    "hasStateVar": 1,
+    "inFunction": 3,
+    "postStateVersion": 1,
+    "preStateVersion": 1,
+    "readsStateVar": 3,
+    "targetsStateVar": 5,
+    "writesStateVar": 1
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 17,
+    "stage2_ir": 6,
+    "stage3_ssa": 7,
+    "stage4_control": 12
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 21,
+    "stage2_ir": 10,
+    "stage3_ssa": 4,
+    "stage4_control": 12
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "etherbank",
+      "source_file": "etherbank.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 1,
+        "Function": 3,
+        "Modifier": 3,
+        "Stmt": 5,
+        "Assignment": 2,
+        "FunctionCall": 2
+      },
+      "edge_counts": {
+        "hasStateVar": 1,
+        "hasFunction": 3,
+        "hasModifier": 3,
+        "containsStmt": 5,
+        "entryPointIs": 3,
+        "containsAssignment": 2,
+        "hasNext": 2,
+        "containsCall": 2
+      },
+      "functions": [
+        "getBalance",
+        "addToBalance",
+        "withdrawBalance"
+      ],
+      "state_vars": [
+        "userBalances"
+      ],
+      "original_contract_name": "EtherBank"
+    },
+    "stage2_ir": {
+      "sample_name": "etherbank",
+      "source_file": "etherbank.sol",
+      "ir_file": "etherbank_ir.txt",
+      "node_counts": {
+        "StateRead": 4,
+        "StateWrite": 1,
+        "ExternalCall": 1
+      },
+      "edge_counts": {
+        "readsStateVar": 3,
+        "targetsStateVar": 5,
+        "writesStateVar": 1,
+        "callsExternal": 1
+      },
+      "external_calls": 1,
+      "internal_calls": 0,
+      "state_writes": 1,
+      "state_reads": 4,
+      "raw_ir_blocks": 10
+    },
+    "stage3_ssa": {
+      "sample_name": "etherbank",
+      "source_file": "etherbank.sol",
+      "ssa_file": "etherbank_ssa.txt",
+      "node_counts": {
+        "VersionedState": 6,
+        "CommitPoint": 1
+      },
+      "edge_counts": {
+        "commitsVar": 1,
+        "preStateVersion": 1,
+        "postStateVersion": 1,
+        "commitsState": 1
+      },
+      "raw_ssa_blocks": 10,
+      "version_states": 6,
+      "commit_points": 1,
+      "linked_statewrites": 1
+    },
+    "stage4_control": {
+      "sample_name": "etherbank",
+      "source_file": "etherbank.sol",
+      "functions": 3,
+      "cfg_functions_found": 3,
+      "cfg_nodes": 9,
+      "cfg_edges": 12,
+      "callgraph_edges": 0,
+      "conditional_nodes": 2,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\etherbank\\cfg__etherbank.sol-EtherBank-addToBalance().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\etherbank\\cfg__etherbank.sol-EtherBank-getBalance(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\etherbank\\cfg__etherbank.sol-EtherBank-withdrawBalance().dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\etherbank\\call-graph__etherbank.sol.EtherBank.call-graph.dot",
+      "actual_contract_name": "EtherBank"
+    },
+    "stage5_highlevel": {
+      "sample_name": "etherbank",
+      "source_file": "etherbank.sol",
+      "external_call_sites": 0,
+      "critical_state_writes": 0,
+      "state_guards": 0,
+      "call_before_effect": 0,
+      "reentrancy_candidates": 0,
+      "functions_with_candidates": []
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 0,
+    "critical_state_writes": 0,
+    "state_guards": 0,
+    "call_before_effect": 0,
+    "reentrancy_candidates": 0,
+    "functions_with_candidates": []
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "raw_ir:reentrancy_bonus.withdrawReward.0": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_bonus.withdrawReward.1": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: amountToWithdraw = rewardsForA[recipient]\n\t\tIRs:\n\t\t\tREF_0(uint256) -> rewardsForA[recipient]\n\t\t\tamountToWithdraw(uint256) := REF_0(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:reentrancy_bonus.withdrawReward.1.1": {
+    "ref": "raw_ir:reentrancy_bonus.withdrawReward.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_bonus.withdrawReward.2": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: rewardsForA[recipient] = 0\n\t\tIRs:\n\t\t\tREF_1(uint256) -> rewardsForA[recipient]\n\t\t\tREF_1(uint256) (->rewardsForA) := 0(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:reentrancy_bonus.withdrawReward.2.1": {
+    "ref": "raw_ir:reentrancy_bonus.withdrawReward.2",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_bonus.withdrawReward.3": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: NEW VARIABLE\n\t\tExpression: success = recipient.call.value(amountToWithdraw)()\n\t\tIRs:\n\t\t\tTMP_1(bool) = LOW_LEVEL_CALL, dest:recipient, function:call, arguments:[''] value:amountToWithdraw \n\t\t\tsuccess(bool) := TMP_1(bool)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:reentrancy_bonus.withdrawReward.3": {
+    "ref": "raw_ir:reentrancy_bonus.withdrawReward.3",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_bonus.withdrawReward.4": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: require(bool)(success)\n\t\tIRs:\n\t\t\tTMP_2(None) = SOLIDITY_CALL require(bool)(success)\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.0": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.1": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: require(bool)(! claimedBonus[recipient])\n\t\tIRs:\n\t\t\tREF_4(bool) -> claimedBonus[recipient]\n\t\t\tTMP_3 = UnaryType.BANG REF_4 \n\t\t\tTMP_4(None) = SOLIDITY_CALL require(bool)(TMP_3)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:reentrancy_bonus.getFirstWithdrawalBonus.1.1": {
+    "ref": "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.2": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: rewardsForA[recipient] += 100\n\t\tIRs:\n\t\t\tREF_5(uint256) -> rewardsForA[recipient]\n\t\t\tREF_5(-> rewardsForA) = REF_5 + 100\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:reentrancy_bonus.getFirstWithdrawalBonus.2": {
+    "ref": "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.2",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:reentrancy_bonus.getFirstWithdrawalBonus.2.1": {
+    "ref": "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.2",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.3": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: withdrawReward(recipient)\n\t\tIRs:\n\t\t\tINTERNAL_CALL, Reentrancy_bonus.withdrawReward(address)(recipient)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "internalcall:reentrancy_bonus.getFirstWithdrawalBonus.3.1": {
+    "ref": "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.3",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.4": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: claimedBonus[recipient] = true\n\t\tIRs:\n\t\t\tREF_6(bool) -> claimedBonus[recipient]\n\t\t\tREF_6(bool) (->claimedBonus) := True(bool)\n\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:reentrancy_bonus.getFirstWithdrawalBonus.4.1": {
+    "ref": "raw_ir:reentrancy_bonus.getFirstWithdrawalBonus.4",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ssa:reentrancy_bonus.withdrawReward.0": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\trecipient_1(address) := ϕ(['recipient_1'])\n\t\t\trewardsForA_1(mapping(address => uint256)) := ϕ(['rewardsForA_2', 'rewardsForA_0', 'rewardsForA_4'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_bonus.withdrawReward.1": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: amountToWithdraw = rewardsForA[recipient]\n\t\tSSA IRs:\n\t\t\tREF_0(uint256) -> rewardsForA_1[recipient_1]\n\t\t\tamountToWithdraw_1(uint256) := REF_0(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_bonus.withdrawReward.2": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: rewardsForA[recipient] = 0\n\t\tSSA IRs:\n\t\t\tREF_1(uint256) -> rewardsForA_1[recipient_1]\n\t\t\trewardsForA_2(mapping(address => uint256)) := ϕ(['rewardsForA_1'])\n\t\t\tREF_1(uint256) (->rewardsForA_2) := 0(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_bonus.withdrawReward.3": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: NEW VARIABLE\n\t\tExpression: success = recipient.call.value(amountToWithdraw)()\n\t\tSSA IRs:\n\t\t\tTMP_1(bool) = LOW_LEVEL_CALL, dest:recipient_1, function:call, arguments:[''] value:amountToWithdraw_1 \n\t\t\tsuccess_1(bool) := TMP_1(bool)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_bonus.withdrawReward.4": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.withdrawReward(address)",
+    "function_name": "withdrawReward",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: require(bool)(success)\n\t\tSSA IRs:\n\t\t\tTMP_2(None) = SOLIDITY_CALL require(bool)(success_1)\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_bonus.getFirstWithdrawalBonus.0": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tclaimedBonus_1(mapping(address => bool)) := ϕ(['claimedBonus_0', 'claimedBonus_2'])\n\t\t\trewardsForA_3(mapping(address => uint256)) := ϕ(['rewardsForA_2', 'rewardsForA_0', 'rewardsForA_4'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_bonus.getFirstWithdrawalBonus.1": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: require(bool)(! claimedBonus[recipient])\n\t\tSSA IRs:\n\t\t\tREF_4(bool) -> claimedBonus_1[recipient_1]\n\t\t\tTMP_3 = UnaryType.BANG REF_4 \n\t\t\tTMP_4(None) = SOLIDITY_CALL require(bool)(TMP_3)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_bonus.getFirstWithdrawalBonus.2": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: rewardsForA[recipient] += 100\n\t\tSSA IRs:\n\t\t\tREF_5(uint256) -> rewardsForA_3[recipient_1]\n\t\t\trewardsForA_4(mapping(address => uint256)) := ϕ(['rewardsForA_3'])\n\t\t\tREF_5(-> rewardsForA_4) = REF_5 + 100\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:reentrancy_bonus.getFirstWithdrawalBonus.2__stage3_ssa": {
+    "ref": "raw_ssa:reentrancy_bonus.getFirstWithdrawalBonus.2"
+  },
+  "raw_ssa:reentrancy_bonus.getFirstWithdrawalBonus.3": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: withdrawReward(recipient)\n\t\tSSA IRs:\n\t\t\tINTERNAL_CALL, Reentrancy_bonus.withdrawReward(address)(recipient_1)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:reentrancy_bonus.getFirstWithdrawalBonus.4": {
+    "sample_name": "reentrancy_bonus",
+    "function": "Reentrancy_bonus.getFirstWithdrawalBonus(address)",
+    "function_name": "getFirstWithdrawalBonus",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: claimedBonus[recipient] = true\n\t\tSSA IRs:\n\t\t\tREF_6(bool) -> claimedBonus_1[recipient_1]\n\t\t\tclaimedBonus_2(mapping(address => bool)) := ϕ(['claimedBonus_1'])\n\t\t\tREF_6(bool) (->claimedBonus_2) := True(bool)\n\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "cfgnode:reentrancy_bonus.reentrancy_bonus.getFirstWithdrawalBonus.3": {
+    "sample_name": "reentrancy_bonus",
+    "contract_name": "reentrancy_bonus",
+    "actual_contract_name": "Reentrancy_bonus",
+    "function_name": "getFirstWithdrawalBonus",
+    "function_signature": "getFirstWithdrawalBonus(address)",
+    "dot_node_id": "3",
+    "dot_label": "Node Type: EXPRESSION 3\n\nEXPRESSION:\nwithdrawReward(recipient)\n\nIRs:\nINTERNAL_CALL, Reentrancy_bonus.withdrawReward(address)(recipient)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_bonus\\cfg__reentrancy_bonus.sol-Reentrancy_bonus-getFirstWithdrawalBonus(address).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:reentrancy_bonus.reentrancy_bonus.withdrawReward.3": {
+    "sample_name": "reentrancy_bonus",
+    "contract_name": "reentrancy_bonus",
+    "actual_contract_name": "Reentrancy_bonus",
+    "function_name": "withdrawReward",
+    "function_signature": "withdrawReward(address)",
+    "dot_node_id": "3",
+    "dot_label": "Node Type: NEW VARIABLE 3\n\nEXPRESSION:\nsuccess = recipient.call.value(amountToWithdraw)()\n\nIRs:\nTMP_1(bool) = LOW_LEVEL_CALL, dest:recipient, function:call, arguments:[''] value:amountToWithdraw \nsuccess(bool) := TMP_1(bool)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_bonus\\cfg__reentrancy_bonus.sol-Reentrancy_bonus-withdrawReward(address).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:reentrancy_bonus.reentrancy_bonus.withdrawReward.4": {
+    "sample_name": "reentrancy_bonus",
+    "contract_name": "reentrancy_bonus",
+    "actual_contract_name": "Reentrancy_bonus",
+    "function_name": "withdrawReward",
+    "function_signature": "withdrawReward(address)",
+    "dot_node_id": "4",
+    "dot_label": "Node Type: EXPRESSION 4\n\nEXPRESSION:\nrequire(bool)(success)\n\nIRs:\nTMP_2(None) = SOLIDITY_CALL require(bool)(success)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_bonus\\cfg__reentrancy_bonus.sol-Reentrancy_bonus-withdrawReward(address).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  }
+}

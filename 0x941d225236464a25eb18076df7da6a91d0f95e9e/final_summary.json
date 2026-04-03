@@ -1,0 +1,190 @@
+{
+  "sample_name": "0x941d225236464a25eb18076df7da6a91d0f95e9e",
+  "source_file": "0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+  "total_nodes": 81,
+  "total_edges": 83,
+  "evidence_entries": 64,
+  "node_type_counts": {
+    "Assignment": 4,
+    "CFGEntry": 5,
+    "CFGExit": 5,
+    "CFGNode": 9,
+    "CallBeforeEffect": 1,
+    "CommitPoint": 2,
+    "Contract": 1,
+    "CriticalStateWrite": 1,
+    "ExternalCall": 3,
+    "ExternalCallSite": 3,
+    "Function": 4,
+    "FunctionCall": 5,
+    "FunctionRef": 2,
+    "Modifier": 4,
+    "ReentrancyCandidate": 1,
+    "StateGuard": 1,
+    "StateRead": 3,
+    "StateVar": 4,
+    "StateWrite": 2,
+    "Stmt": 3,
+    "VersionedState": 18
+  },
+  "relation_counts": {
+    "abstractsCall": 3,
+    "abstractsStateWrite": 1,
+    "branchTo": 2,
+    "candidateInFunction": 1,
+    "candidateTargetsState": 1,
+    "commitsState": 2,
+    "commitsVar": 2,
+    "containsAssignment": 4,
+    "containsCall": 5,
+    "containsStmt": 3,
+    "derivedFrom": 1,
+    "entryOf": 5,
+    "entryPointIs": 3,
+    "exitOf": 5,
+    "flowsToExit": 3,
+    "guardedBy": 1,
+    "hasCallBeforeEffect": 1,
+    "hasCriticalWrite": 2,
+    "hasExternalCall": 2,
+    "hasFunction": 4,
+    "hasModifier": 4,
+    "hasStateVar": 4,
+    "inFunction": 9,
+    "nextBlock": 4,
+    "postStateVersion": 2,
+    "preStateVersion": 2,
+    "readsStateVar": 1,
+    "targetsStateVar": 6
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 25,
+    "stage2_ir": 8,
+    "stage3_ssa": 20,
+    "stage4_control": 24,
+    "stage5_highlevel": 7
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 27,
+    "stage2_ir": 6,
+    "stage3_ssa": 8,
+    "stage4_control": 28,
+    "stage5_highlevel": 14
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "0x941d225236464a25eb18076df7da6a91d0f95e9e",
+      "source_file": "0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 4,
+        "Function": 4,
+        "Modifier": 4,
+        "Stmt": 3,
+        "Assignment": 4,
+        "FunctionCall": 5
+      },
+      "edge_counts": {
+        "hasStateVar": 4,
+        "hasFunction": 4,
+        "hasModifier": 4,
+        "containsStmt": 3,
+        "entryPointIs": 3,
+        "containsAssignment": 4,
+        "containsCall": 5
+      },
+      "functions": [
+        "ETH_FUND",
+        "Deposit",
+        "CashOut",
+        "constructor"
+      ],
+      "state_vars": [
+        "balances",
+        "MinDeposit",
+        "TransferLog",
+        "lastBlock"
+      ],
+      "original_contract_name": "ETH_FUND"
+    },
+    "stage2_ir": {
+      "sample_name": "0x941d225236464a25eb18076df7da6a91d0f95e9e",
+      "source_file": "0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+      "ir_file": "0x941d225236464a25eb18076df7da6a91d0f95e9e_ir.txt",
+      "node_counts": {
+        "StateWrite": 2,
+        "StateRead": 3,
+        "ExternalCall": 3
+      },
+      "edge_counts": {
+        "targetsStateVar": 5,
+        "readsStateVar": 1
+      },
+      "external_calls": 3,
+      "internal_calls": 0,
+      "state_writes": 2,
+      "state_reads": 3,
+      "raw_ir_blocks": 22
+    },
+    "stage3_ssa": {
+      "sample_name": "0x941d225236464a25eb18076df7da6a91d0f95e9e",
+      "source_file": "0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+      "ssa_file": "0x941d225236464a25eb18076df7da6a91d0f95e9e_ssa.txt",
+      "node_counts": {
+        "VersionedState": 18,
+        "CommitPoint": 2
+      },
+      "edge_counts": {
+        "commitsVar": 2,
+        "preStateVersion": 2,
+        "postStateVersion": 2,
+        "commitsState": 2
+      },
+      "raw_ssa_blocks": 22,
+      "version_states": 18,
+      "commit_points": 2,
+      "linked_statewrites": 2
+    },
+    "stage4_control": {
+      "sample_name": "0x941d225236464a25eb18076df7da6a91d0f95e9e",
+      "source_file": "0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+      "functions": 5,
+      "cfg_functions_found": 5,
+      "cfg_nodes": 19,
+      "cfg_edges": 28,
+      "callgraph_edges": 0,
+      "conditional_nodes": 5,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x941d225236464a25eb18076df7da6a91d0f95e9e\\cfg__0x941d225236464a25eb18076df7da6a91d0f95e9e.sol-ETH_FUND-CashOut(uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x941d225236464a25eb18076df7da6a91d0f95e9e\\cfg__0x941d225236464a25eb18076df7da6a91d0f95e9e.sol-ETH_FUND-Deposit().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x941d225236464a25eb18076df7da6a91d0f95e9e\\cfg__0x941d225236464a25eb18076df7da6a91d0f95e9e.sol-ETH_FUND-ETH_FUND(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x941d225236464a25eb18076df7da6a91d0f95e9e\\cfg__0x941d225236464a25eb18076df7da6a91d0f95e9e.sol-ETH_FUND-fallback().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x941d225236464a25eb18076df7da6a91d0f95e9e\\cfg__0x941d225236464a25eb18076df7da6a91d0f95e9e.sol-ETH_FUND-slitherConstructorVariables().dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x941d225236464a25eb18076df7da6a91d0f95e9e\\call-graph__0x941d225236464a25eb18076df7da6a91d0f95e9e.sol.ETH_FUND.call-graph.dot",
+      "actual_contract_name": "ETH_FUND"
+    },
+    "stage5_highlevel": {
+      "sample_name": "0x941d225236464a25eb18076df7da6a91d0f95e9e",
+      "source_file": "0x941d225236464a25eb18076df7da6a91d0f95e9e.sol",
+      "external_call_sites": 3,
+      "critical_state_writes": 1,
+      "state_guards": 1,
+      "call_before_effect": 1,
+      "reentrancy_candidates": 1,
+      "functions_with_candidates": [
+        "CashOut"
+      ]
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 3,
+    "critical_state_writes": 1,
+    "state_guards": 1,
+    "call_before_effect": 1,
+    "reentrancy_candidates": 1,
+    "functions_with_candidates": [
+      "CashOut"
+    ]
+  }
+}

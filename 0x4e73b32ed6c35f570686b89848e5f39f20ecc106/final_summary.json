@@ -1,0 +1,207 @@
+{
+  "sample_name": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106",
+  "source_file": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+  "total_nodes": 103,
+  "total_edges": 117,
+  "evidence_entries": 76,
+  "node_type_counts": {
+    "Assignment": 5,
+    "CFGEntry": 6,
+    "CFGExit": 6,
+    "CFGNode": 11,
+    "CallBeforeEffect": 1,
+    "CommitPoint": 2,
+    "Contract": 1,
+    "CriticalStateWrite": 1,
+    "ExternalCall": 3,
+    "ExternalCallSite": 3,
+    "Function": 6,
+    "FunctionCall": 6,
+    "FunctionRef": 2,
+    "InternalCall": 1,
+    "Modifier": 6,
+    "ReentrancyCandidate": 1,
+    "Require": 2,
+    "StateGuard": 1,
+    "StateRead": 4,
+    "StateVar": 4,
+    "StateWrite": 2,
+    "Stmt": 9,
+    "VersionedState": 20
+  },
+  "relation_counts": {
+    "abstractsCall": 3,
+    "abstractsStateWrite": 1,
+    "branchTo": 1,
+    "callsBuiltin": 2,
+    "callsExternal": 1,
+    "callsInternal": 1,
+    "candidateInFunction": 1,
+    "candidateTargetsState": 1,
+    "commitsState": 2,
+    "commitsVar": 2,
+    "containsAssignment": 5,
+    "containsCall": 6,
+    "containsRequire": 2,
+    "containsStmt": 9,
+    "derivedFrom": 2,
+    "entryOf": 6,
+    "entryPointIs": 6,
+    "exitOf": 6,
+    "flowsToExit": 6,
+    "guardedBy": 1,
+    "hasCallBeforeEffect": 1,
+    "hasCriticalWrite": 2,
+    "hasExternalCall": 2,
+    "hasFunction": 6,
+    "hasModifier": 6,
+    "hasNext": 3,
+    "hasStateVar": 4,
+    "inFunction": 11,
+    "nextBlock": 4,
+    "postStateVersion": 2,
+    "preStateVersion": 2,
+    "readsStateVar": 2,
+    "targetsStateVar": 7,
+    "writesStateVar": 1
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 39,
+    "stage2_ir": 10,
+    "stage3_ssa": 22,
+    "stage4_control": 30,
+    "stage5_highlevel": 7
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 47,
+    "stage2_ir": 10,
+    "stage3_ssa": 8,
+    "stage4_control": 37,
+    "stage5_highlevel": 15
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106",
+      "source_file": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 4,
+        "Function": 6,
+        "Modifier": 6,
+        "Stmt": 9,
+        "Require": 2,
+        "Assignment": 5,
+        "FunctionCall": 6
+      },
+      "edge_counts": {
+        "hasStateVar": 4,
+        "hasFunction": 6,
+        "hasModifier": 6,
+        "containsStmt": 9,
+        "entryPointIs": 6,
+        "containsRequire": 2,
+        "hasNext": 3,
+        "containsAssignment": 5,
+        "containsCall": 6
+      },
+      "functions": [
+        "SetMinSum",
+        "SetLogFile",
+        "Initialized",
+        "Deposit",
+        "Collect",
+        "constructor"
+      ],
+      "state_vars": [
+        "balances",
+        "MinSum",
+        "Log",
+        "intitalized"
+      ],
+      "original_contract_name": "PRIVATE_ETH_CELL"
+    },
+    "stage2_ir": {
+      "sample_name": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106",
+      "source_file": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+      "ir_file": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106_ir.txt",
+      "node_counts": {
+        "StateWrite": 2,
+        "StateRead": 4,
+        "ExternalCall": 3,
+        "InternalCall": 1
+      },
+      "edge_counts": {
+        "writesStateVar": 1,
+        "targetsStateVar": 6,
+        "readsStateVar": 2,
+        "callsExternal": 1
+      },
+      "external_calls": 3,
+      "internal_calls": 1,
+      "state_writes": 2,
+      "state_reads": 4,
+      "raw_ir_blocks": 26
+    },
+    "stage3_ssa": {
+      "sample_name": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106",
+      "source_file": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+      "ssa_file": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106_ssa.txt",
+      "node_counts": {
+        "VersionedState": 20,
+        "CommitPoint": 2
+      },
+      "edge_counts": {
+        "commitsVar": 2,
+        "preStateVersion": 2,
+        "postStateVersion": 2,
+        "commitsState": 2
+      },
+      "raw_ssa_blocks": 26,
+      "version_states": 20,
+      "commit_points": 2,
+      "linked_statewrites": 2
+    },
+    "stage4_control": {
+      "sample_name": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106",
+      "source_file": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+      "functions": 6,
+      "cfg_functions_found": 6,
+      "cfg_nodes": 23,
+      "cfg_edges": 34,
+      "callgraph_edges": 3,
+      "conditional_nodes": 3,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x4e73b32ed6c35f570686b89848e5f39f20ecc106\\cfg__0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol-PRIVATE_ETH_CELL-Collect(uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x4e73b32ed6c35f570686b89848e5f39f20ecc106\\cfg__0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol-PRIVATE_ETH_CELL-Deposit().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x4e73b32ed6c35f570686b89848e5f39f20ecc106\\cfg__0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol-PRIVATE_ETH_CELL-fallback().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x4e73b32ed6c35f570686b89848e5f39f20ecc106\\cfg__0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol-PRIVATE_ETH_CELL-Initialized().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x4e73b32ed6c35f570686b89848e5f39f20ecc106\\cfg__0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol-PRIVATE_ETH_CELL-SetLogFile(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x4e73b32ed6c35f570686b89848e5f39f20ecc106\\cfg__0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol-PRIVATE_ETH_CELL-SetMinSum(uint256).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x4e73b32ed6c35f570686b89848e5f39f20ecc106\\call-graph__0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol.PRIVATE_ETH_CELL.call-graph.dot",
+      "actual_contract_name": "PRIVATE_ETH_CELL"
+    },
+    "stage5_highlevel": {
+      "sample_name": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106",
+      "source_file": "0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol",
+      "external_call_sites": 3,
+      "critical_state_writes": 1,
+      "state_guards": 1,
+      "call_before_effect": 1,
+      "reentrancy_candidates": 1,
+      "functions_with_candidates": [
+        "Collect"
+      ]
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 3,
+    "critical_state_writes": 1,
+    "state_guards": 1,
+    "call_before_effect": 1,
+    "reentrancy_candidates": 1,
+    "functions_with_candidates": [
+      "Collect"
+    ]
+  }
+}

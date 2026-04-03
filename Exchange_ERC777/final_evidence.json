@@ -1,0 +1,535 @@
+{
+  "raw_ir:Exchange_ERC777.constructor.0": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.constructor(address)",
+    "function_name": "constructor",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.constructor.1": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.constructor(address)",
+    "function_name": "constructor",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: token = IERC777(_token)\n\t\tIRs:\n\t\t\tTMP_0 = CONVERT _token to IERC777\n\t\t\ttoken(IERC777) := TMP_0(IERC777)\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.getInputPrice.0": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.getInputPrice.1": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: inputAmountWithFee = inputAmount * 997\n\t\tIRs:\n\t\t\tTMP_1(uint256) = inputAmount * 997\n\t\t\tinputAmountWithFee(uint256) := TMP_1(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.getInputPrice.2": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: NEW VARIABLE\n\t\tExpression: numerator = inputAmountWithFee * outputReserve\n\t\tIRs:\n\t\t\tTMP_2(uint256) = inputAmountWithFee * outputReserve\n\t\t\tnumerator(uint256) := TMP_2(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.getInputPrice.3": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: NEW VARIABLE\n\t\tExpression: denominator = (inputReserve * 1000) + inputAmountWithFee\n\t\tIRs:\n\t\t\tTMP_3(uint256) = inputReserve * 1000\n\t\t\tTMP_4(uint256) = TMP_3 + inputAmountWithFee\n\t\t\tdenominator(uint256) := TMP_4(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.getInputPrice.4": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: RETURN\n\t\tExpression: numerator / denominator\n\t\tIRs:\n\t\t\tTMP_5(uint256) = numerator / denominator\n\t\t\tRETURN TMP_5\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.tokenToEthInput.0": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.tokenToEthInput.1": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: tokenReserve = token.balanceOf(address(this))\n\t\tIRs:\n\t\t\tTMP_6 = CONVERT this to address\n\t\t\tTMP_7(uint256) = HIGH_LEVEL_CALL, dest:token(IERC777), function:balanceOf, arguments:['TMP_6']  \n\t\t\ttokenReserve(uint256) := TMP_7(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:Exchange_ERC777.tokenToEthInput.1": {
+    "ref": "raw_ir:Exchange_ERC777.tokenToEthInput.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.tokenToEthInput.2": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: NEW VARIABLE\n\t\tExpression: ethReserve = address(this).balance\n\t\tIRs:\n\t\t\tTMP_8 = CONVERT this to address\n\t\t\tTMP_9(uint256) = SOLIDITY_CALL balance(address)(TMP_8)\n\t\t\tethReserve(uint256) := TMP_9(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.tokenToEthInput.3": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: NEW VARIABLE\n\t\tExpression: ethBought = getInputPrice(tokensSold,tokenReserve,ethReserve)\n\t\tIRs:\n\t\t\tTMP_10(uint256) = INTERNAL_CALL, Exchange.getInputPrice(uint256,uint256,uint256)(tokensSold,tokenReserve,ethReserve)\n\t\t\tethBought(uint256) := TMP_10(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "internalcall:Exchange_ERC777.tokenToEthInput.3.1": {
+    "ref": "raw_ir:Exchange_ERC777.tokenToEthInput.3",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.tokenToEthInput.4": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: require(bool,string)(token.transferFrom(msg.sender,address(this),tokensSold),Transfer failed)\n\t\tIRs:\n\t\t\tTMP_11 = CONVERT this to address\n\t\t\tTMP_12(bool) = HIGH_LEVEL_CALL, dest:token(IERC777), function:transferFrom, arguments:['msg.sender', 'TMP_11', 'tokensSold']  \n\t\t\tTMP_13(None) = SOLIDITY_CALL require(bool,string)(TMP_12,Transfer failed)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:Exchange_ERC777.tokenToEthInput.4": {
+    "ref": "raw_ir:Exchange_ERC777.tokenToEthInput.4",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.tokenToEthInput.5": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ir_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: NEW VARIABLE\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.tokenToEthInput.6": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ir_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: EXPRESSION\n\t\tExpression: (sent,None) = msg.sender.call{value: ethBought}()\n\t\tIRs:\n\t\t\tTUPLE_0(bool,bytes) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[''] value:ethBought \n\t\t\tsent(bool)= UNPACK TUPLE_0 index: 0 \n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:Exchange_ERC777.tokenToEthInput.6": {
+    "ref": "raw_ir:Exchange_ERC777.tokenToEthInput.6",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.tokenToEthInput.7": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ir_stmt_index": 7,
+    "raw": "\t\tNode[7] Type: EXPRESSION\n\t\tExpression: require(bool,string)(sent,ETH transfer failed)\n\t\tIRs:\n\t\t\tTMP_14(None) = SOLIDITY_CALL require(bool,string)(sent,ETH transfer failed)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.tokenToEthInput.8": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ir_stmt_index": 8,
+    "raw": "\t\tNode[8] Type: RETURN\n\t\tExpression: ethBought\n\t\tIRs:\n\t\t\tRETURN ethBought\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:Exchange_ERC777.receive.0": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.receive()",
+    "function_name": "receive",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.constructor.0": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.constructor(address)",
+    "function_name": "constructor",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.constructor.1": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.constructor(address)",
+    "function_name": "constructor",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: token = IERC777(_token)\n\t\tSSA IRs:\n\t\t\tTMP_0 = CONVERT _token_1 to IERC777\n\t\t\ttoken_1(IERC777) := TMP_0(IERC777)\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.getInputPrice.0": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tinputAmount_1(uint256) := ϕ(['tokensSold_1'])\n\t\t\tinputReserve_1(uint256) := ϕ(['tokenReserve_1'])\n\t\t\toutputReserve_1(uint256) := ϕ(['ethReserve_1'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.getInputPrice.1": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: inputAmountWithFee = inputAmount * 997\n\t\tSSA IRs:\n\t\t\tTMP_1(uint256) = inputAmount_1 * 997\n\t\t\tinputAmountWithFee_1(uint256) := TMP_1(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.getInputPrice.2": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: NEW VARIABLE\n\t\tExpression: numerator = inputAmountWithFee * outputReserve\n\t\tSSA IRs:\n\t\t\tTMP_2(uint256) = inputAmountWithFee_1 * outputReserve_1\n\t\t\tnumerator_1(uint256) := TMP_2(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.getInputPrice.3": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: NEW VARIABLE\n\t\tExpression: denominator = (inputReserve * 1000) + inputAmountWithFee\n\t\tSSA IRs:\n\t\t\tTMP_3(uint256) = inputReserve_1 * 1000\n\t\t\tTMP_4(uint256) = TMP_3 + inputAmountWithFee_1\n\t\t\tdenominator_1(uint256) := TMP_4(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.getInputPrice.4": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.getInputPrice(uint256,uint256,uint256)",
+    "function_name": "getInputPrice",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: RETURN\n\t\tExpression: numerator / denominator\n\t\tSSA IRs:\n\t\t\tTMP_5(uint256) = numerator_1 / denominator_1\n\t\t\tRETURN TMP_5\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.tokenToEthInput.0": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\ttoken_2(IERC777) := ϕ(['token_5', 'token_0', 'token_1'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.tokenToEthInput.1": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: tokenReserve = token.balanceOf(address(this))\n\t\tSSA IRs:\n\t\t\tTMP_6 = CONVERT this to address\n\t\t\tTMP_7(uint256) = HIGH_LEVEL_CALL, dest:token_2(IERC777), function:balanceOf, arguments:['TMP_6']  \n\t\t\ttoken_3(IERC777) := ϕ(['token_5', 'token_2', 'token_1'])\n\t\t\ttokenReserve_1(uint256) := TMP_7(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.tokenToEthInput.2": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: NEW VARIABLE\n\t\tExpression: ethReserve = address(this).balance\n\t\tSSA IRs:\n\t\t\tTMP_8 = CONVERT this to address\n\t\t\tTMP_9(uint256) = SOLIDITY_CALL balance(address)(TMP_8)\n\t\t\tethReserve_1(uint256) := TMP_9(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.tokenToEthInput.3": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: NEW VARIABLE\n\t\tExpression: ethBought = getInputPrice(tokensSold,tokenReserve,ethReserve)\n\t\tSSA IRs:\n\t\t\tTMP_10(uint256) = INTERNAL_CALL, Exchange.getInputPrice(uint256,uint256,uint256)(tokensSold_1,tokenReserve_1,ethReserve_1)\n\t\t\tethBought_1(uint256) := TMP_10(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.tokenToEthInput.4": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: require(bool,string)(token.transferFrom(msg.sender,address(this),tokensSold),Transfer failed)\n\t\tSSA IRs:\n\t\t\tTMP_11 = CONVERT this to address\n\t\t\tTMP_12(bool) = HIGH_LEVEL_CALL, dest:token_4(IERC777), function:transferFrom, arguments:['msg.sender', 'TMP_11', 'tokensSold_1']  \n\t\t\ttoken_5(IERC777) := ϕ(['token_4', 'token_5', 'token_1'])\n\t\t\tTMP_13(None) = SOLIDITY_CALL require(bool,string)(TMP_12,Transfer failed)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.tokenToEthInput.5": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ssa_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: NEW VARIABLE\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.tokenToEthInput.6": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ssa_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: EXPRESSION\n\t\tExpression: (sent,None) = msg.sender.call{value: ethBought}()\n\t\tSSA IRs:\n\t\t\tTUPLE_0(bool,bytes) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[''] value:ethBought_1 \n\t\t\tsent_1(bool)= UNPACK TUPLE_0 index: 0 \n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.tokenToEthInput.7": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ssa_stmt_index": 7,
+    "raw": "\t\tNode[7] Type: EXPRESSION\n\t\tExpression: require(bool,string)(sent,ETH transfer failed)\n\t\tSSA IRs:\n\t\t\tTMP_14(None) = SOLIDITY_CALL require(bool,string)(sent_1,ETH transfer failed)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.tokenToEthInput.8": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.tokenToEthInput(uint256)",
+    "function_name": "tokenToEthInput",
+    "ssa_stmt_index": 8,
+    "raw": "\t\tNode[8] Type: RETURN\n\t\tExpression: ethBought\n\t\tSSA IRs:\n\t\t\tRETURN ethBought_1\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:Exchange_ERC777.receive.0": {
+    "sample_name": "Exchange_ERC777",
+    "function": "Exchange.receive()",
+    "function_name": "receive",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.constructor.1": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "constructor",
+    "function_signature": "constructor(address)",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: EXPRESSION 1\n\nEXPRESSION:\ntoken = IERC777(_token)\n\nIRs:\nTMP_0 = CONVERT _token to IERC777\ntoken(IERC777) := TMP_0(IERC777)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-constructor(address).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.getInputPrice.1": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "getInputPrice",
+    "function_signature": "getInputPrice(uint256,uint256,uint256)",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: NEW VARIABLE 1\n\nEXPRESSION:\ninputAmountWithFee = inputAmount * 997\n\nIRs:\nTMP_1(uint256) = inputAmount * 997\ninputAmountWithFee(uint256) := TMP_1(uint256)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-getInputPrice(uint256,uint256,uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.getInputPrice.2": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "getInputPrice",
+    "function_signature": "getInputPrice(uint256,uint256,uint256)",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: NEW VARIABLE 2\n\nEXPRESSION:\nnumerator = inputAmountWithFee * outputReserve\n\nIRs:\nTMP_2(uint256) = inputAmountWithFee * outputReserve\nnumerator(uint256) := TMP_2(uint256)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-getInputPrice(uint256,uint256,uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.getInputPrice.3": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "getInputPrice",
+    "function_signature": "getInputPrice(uint256,uint256,uint256)",
+    "dot_node_id": "3",
+    "dot_label": "Node Type: NEW VARIABLE 3\n\nEXPRESSION:\ndenominator = (inputReserve * 1000) + inputAmountWithFee\n\nIRs:\nTMP_3(uint256) = inputReserve * 1000\nTMP_4(uint256) = TMP_3 + inputAmountWithFee\ndenominator(uint256) := TMP_4(uint256)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-getInputPrice(uint256,uint256,uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.getInputPrice.4": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "getInputPrice",
+    "function_signature": "getInputPrice(uint256,uint256,uint256)",
+    "dot_node_id": "4",
+    "dot_label": "Node Type: RETURN 4\n\nEXPRESSION:\nnumerator / denominator\n\nIRs:\nTMP_5(uint256) = numerator / denominator\nRETURN TMP_5",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-getInputPrice(uint256,uint256,uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.tokenToEthInput.1": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "tokenToEthInput",
+    "function_signature": "tokenToEthInput(uint256)",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: NEW VARIABLE 1\n\nEXPRESSION:\ntokenReserve = token.balanceOf(address(this))\n\nIRs:\nTMP_6 = CONVERT this to address\nTMP_7(uint256) = HIGH_LEVEL_CALL, dest:token(IERC777), function:balanceOf, arguments:['TMP_6']  \ntokenReserve(uint256) := TMP_7(uint256)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-tokenToEthInput(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.tokenToEthInput.2": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "tokenToEthInput",
+    "function_signature": "tokenToEthInput(uint256)",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: NEW VARIABLE 2\n\nEXPRESSION:\nethReserve = address(this).balance\n\nIRs:\nTMP_8 = CONVERT this to address\nTMP_9(uint256) = SOLIDITY_CALL balance(address)(TMP_8)\nethReserve(uint256) := TMP_9(uint256)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-tokenToEthInput(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.tokenToEthInput.3": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "tokenToEthInput",
+    "function_signature": "tokenToEthInput(uint256)",
+    "dot_node_id": "3",
+    "dot_label": "Node Type: NEW VARIABLE 3\n\nEXPRESSION:\nethBought = getInputPrice(tokensSold,tokenReserve,ethReserve)\n\nIRs:\nTMP_10(uint256) = INTERNAL_CALL, Exchange.getInputPrice(uint256,uint256,uint256)(tokensSold,tokenReserve,ethReserve)\nethBought(uint256) := TMP_10(uint256)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-tokenToEthInput(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.tokenToEthInput.4": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "tokenToEthInput",
+    "function_signature": "tokenToEthInput(uint256)",
+    "dot_node_id": "4",
+    "dot_label": "Node Type: EXPRESSION 4\n\nEXPRESSION:\nrequire(bool,string)(token.transferFrom(msg.sender,address(this),tokensSold),Transfer failed)\n\nIRs:\nTMP_11 = CONVERT this to address\nTMP_12(bool) = HIGH_LEVEL_CALL, dest:token(IERC777), function:transferFrom, arguments:['msg.sender', 'TMP_11', 'tokensSold']  \nTMP_13(None) = SOLIDITY_CALL require(bool,string)(TMP_12,Transfer failed)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-tokenToEthInput(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.tokenToEthInput.5": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "tokenToEthInput",
+    "function_signature": "tokenToEthInput(uint256)",
+    "dot_node_id": "5",
+    "dot_label": "Node Type: NEW VARIABLE 5\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-tokenToEthInput(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.tokenToEthInput.6": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "tokenToEthInput",
+    "function_signature": "tokenToEthInput(uint256)",
+    "dot_node_id": "6",
+    "dot_label": "Node Type: EXPRESSION 6\n\nEXPRESSION:\n(sent,None) = msg.sender.call{value: ethBought}()\n\nIRs:\nTUPLE_0(bool,bytes) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[''] value:ethBought \nsent(bool)= UNPACK TUPLE_0 index: 0 ",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-tokenToEthInput(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.tokenToEthInput.7": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "tokenToEthInput",
+    "function_signature": "tokenToEthInput(uint256)",
+    "dot_node_id": "7",
+    "dot_label": "Node Type: EXPRESSION 7\n\nEXPRESSION:\nrequire(bool,string)(sent,ETH transfer failed)\n\nIRs:\nTMP_14(None) = SOLIDITY_CALL require(bool,string)(sent,ETH transfer failed)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-tokenToEthInput(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:Exchange_ERC777.Exchange_ERC777.tokenToEthInput.8": {
+    "sample_name": "Exchange_ERC777",
+    "contract_name": "Exchange_ERC777",
+    "actual_contract_name": "Exchange",
+    "function_name": "tokenToEthInput",
+    "function_signature": "tokenToEthInput(uint256)",
+    "dot_node_id": "8",
+    "dot_label": "Node Type: RETURN 8\n\nEXPRESSION:\nethBought\n\nIRs:\nRETURN ethBought",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-tokenToEthInput(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  }
+}

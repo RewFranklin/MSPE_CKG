@@ -1,0 +1,189 @@
+{
+  "sample_name": "reentrance",
+  "source_file": "reentrance.sol",
+  "total_nodes": 52,
+  "total_edges": 68,
+  "evidence_entries": 41,
+  "node_type_counts": {
+    "Assignment": 2,
+    "CFGEntry": 4,
+    "CFGExit": 4,
+    "CFGNode": 5,
+    "CallBeforeEffect": 1,
+    "CommitPoint": 2,
+    "Contract": 1,
+    "CriticalStateWrite": 1,
+    "ExternalCall": 1,
+    "ExternalCallSite": 1,
+    "Function": 4,
+    "FunctionCall": 2,
+    "FunctionRef": 1,
+    "Modifier": 4,
+    "ReentrancyCandidate": 1,
+    "StateGuard": 1,
+    "StateRead": 4,
+    "StateVar": 1,
+    "StateWrite": 2,
+    "Stmt": 3,
+    "VersionedState": 7
+  },
+  "relation_counts": {
+    "abstractsCall": 1,
+    "abstractsStateWrite": 1,
+    "branchTo": 2,
+    "candidateInFunction": 1,
+    "candidateTargetsState": 1,
+    "commitsState": 2,
+    "commitsVar": 2,
+    "containsAssignment": 2,
+    "containsCall": 2,
+    "containsStmt": 3,
+    "derivedFrom": 1,
+    "entryOf": 4,
+    "entryPointIs": 3,
+    "entryTo": 1,
+    "exitOf": 4,
+    "flowsToExit": 2,
+    "guardedBy": 1,
+    "hasCallBeforeEffect": 1,
+    "hasCriticalWrite": 2,
+    "hasExternalCall": 2,
+    "hasFunction": 4,
+    "hasModifier": 4,
+    "hasStateVar": 1,
+    "inFunction": 5,
+    "nextBlock": 1,
+    "postStateVersion": 2,
+    "preStateVersion": 2,
+    "readsStateVar": 3,
+    "targetsStateVar": 7,
+    "writesStateVar": 1
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 17,
+    "stage2_ir": 7,
+    "stage3_ssa": 9,
+    "stage4_control": 17,
+    "stage5_highlevel": 5
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 19,
+    "stage2_ir": 10,
+    "stage3_ssa": 8,
+    "stage4_control": 19,
+    "stage5_highlevel": 12
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "reentrance",
+      "source_file": "reentrance.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 1,
+        "Function": 4,
+        "Modifier": 4,
+        "Stmt": 3,
+        "Assignment": 2,
+        "FunctionCall": 2
+      },
+      "edge_counts": {
+        "hasStateVar": 1,
+        "hasFunction": 4,
+        "hasModifier": 4,
+        "containsStmt": 3,
+        "entryPointIs": 3,
+        "containsAssignment": 2,
+        "containsCall": 2
+      },
+      "functions": [
+        "donate",
+        "balanceOf",
+        "withdraw",
+        "constructor"
+      ],
+      "state_vars": [
+        "balances"
+      ],
+      "original_contract_name": "Reentrance"
+    },
+    "stage2_ir": {
+      "sample_name": "reentrance",
+      "source_file": "reentrance.sol",
+      "ir_file": "reentrance_ir.txt",
+      "node_counts": {
+        "StateWrite": 2,
+        "StateRead": 4,
+        "ExternalCall": 1
+      },
+      "edge_counts": {
+        "writesStateVar": 1,
+        "targetsStateVar": 6,
+        "readsStateVar": 3
+      },
+      "external_calls": 1,
+      "internal_calls": 0,
+      "state_writes": 2,
+      "state_reads": 4,
+      "raw_ir_blocks": 13
+    },
+    "stage3_ssa": {
+      "sample_name": "reentrance",
+      "source_file": "reentrance.sol",
+      "ssa_file": "reentrance_ssa.txt",
+      "node_counts": {
+        "VersionedState": 7,
+        "CommitPoint": 2
+      },
+      "edge_counts": {
+        "commitsVar": 2,
+        "preStateVersion": 2,
+        "postStateVersion": 2,
+        "commitsState": 2
+      },
+      "raw_ssa_blocks": 13,
+      "version_states": 7,
+      "commit_points": 2,
+      "linked_statewrites": 2
+    },
+    "stage4_control": {
+      "sample_name": "reentrance",
+      "source_file": "reentrance.sol",
+      "functions": 4,
+      "cfg_functions_found": 4,
+      "cfg_nodes": 13,
+      "cfg_edges": 19,
+      "callgraph_edges": 0,
+      "conditional_nodes": 3,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\reentrance\\cfg__reentrance.sol-Reentrance-balanceOf(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\reentrance\\cfg__reentrance.sol-Reentrance-donate(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\reentrance\\cfg__reentrance.sol-Reentrance-fallback().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\reentrance\\cfg__reentrance.sol-Reentrance-withdraw(uint256).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrance\\call-graph__reentrance.sol.Reentrance.call-graph.dot",
+      "actual_contract_name": "Reentrance"
+    },
+    "stage5_highlevel": {
+      "sample_name": "reentrance",
+      "source_file": "reentrance.sol",
+      "external_call_sites": 1,
+      "critical_state_writes": 1,
+      "state_guards": 1,
+      "call_before_effect": 1,
+      "reentrancy_candidates": 1,
+      "functions_with_candidates": [
+        "withdraw"
+      ]
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 1,
+    "critical_state_writes": 1,
+    "state_guards": 1,
+    "call_before_effect": 1,
+    "reentrancy_candidates": 1,
+    "functions_with_candidates": [
+      "withdraw"
+    ]
+  }
+}

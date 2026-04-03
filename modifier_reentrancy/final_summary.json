@@ -1,0 +1,149 @@
+{
+  "sample_name": "modifier_reentrancy",
+  "source_file": "modifier_reentrancy.sol",
+  "total_nodes": 34,
+  "total_edges": 38,
+  "evidence_entries": 32,
+  "node_type_counts": {
+    "Assignment": 1,
+    "CFGEntry": 2,
+    "CFGExit": 2,
+    "CFGNode": 6,
+    "CommitPoint": 1,
+    "Contract": 1,
+    "ExternalCall": 2,
+    "Function": 2,
+    "FunctionCall": 6,
+    "FunctionRef": 2,
+    "Modifier": 2,
+    "StateVar": 1,
+    "Stmt": 3,
+    "VersionedState": 3
+  },
+  "relation_counts": {
+    "branchTo": 2,
+    "callsBuiltin": 2,
+    "callsExternal": 1,
+    "containsAssignment": 1,
+    "containsCall": 6,
+    "containsStmt": 3,
+    "entryOf": 2,
+    "entryPointIs": 2,
+    "exitOf": 2,
+    "flowsToExit": 2,
+    "hasFunction": 2,
+    "hasModifier": 2,
+    "hasNext": 1,
+    "hasStateVar": 1,
+    "inFunction": 6,
+    "nextBlock": 3
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 16,
+    "stage2_ir": 2,
+    "stage3_ssa": 4,
+    "stage4_control": 14
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 18,
+    "stage2_ir": 1,
+    "stage4_control": 19
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "modifier_reentrancy",
+      "source_file": "modifier_reentrancy.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 1,
+        "Function": 2,
+        "Modifier": 2,
+        "Stmt": 3,
+        "Assignment": 1,
+        "FunctionCall": 6
+      },
+      "edge_counts": {
+        "hasStateVar": 1,
+        "hasFunction": 2,
+        "hasModifier": 2,
+        "containsStmt": 3,
+        "entryPointIs": 2,
+        "containsAssignment": 1,
+        "containsCall": 6,
+        "hasNext": 1
+      },
+      "functions": [
+        "supportsToken",
+        "call"
+      ],
+      "state_vars": [
+        "hasBeenCalled"
+      ],
+      "original_contract_name": "attack"
+    },
+    "stage2_ir": {
+      "sample_name": "modifier_reentrancy",
+      "source_file": "modifier_reentrancy.sol",
+      "ir_file": "modifier_reentrancy_ir.txt",
+      "node_counts": {
+        "ExternalCall": 2
+      },
+      "edge_counts": {
+        "callsExternal": 1
+      },
+      "external_calls": 2,
+      "internal_calls": 0,
+      "state_writes": 0,
+      "state_reads": 0,
+      "raw_ir_blocks": 14
+    },
+    "stage3_ssa": {
+      "sample_name": "modifier_reentrancy",
+      "source_file": "modifier_reentrancy.sol",
+      "ssa_file": "modifier_reentrancy_ssa.txt",
+      "node_counts": {
+        "CommitPoint": 1,
+        "VersionedState": 3
+      },
+      "edge_counts": {},
+      "raw_ssa_blocks": 14,
+      "version_states": 3,
+      "commit_points": 1,
+      "linked_statewrites": 0
+    },
+    "stage4_control": {
+      "sample_name": "modifier_reentrancy",
+      "source_file": "modifier_reentrancy.sol",
+      "functions": 2,
+      "cfg_functions_found": 2,
+      "cfg_nodes": 10,
+      "cfg_edges": 17,
+      "callgraph_edges": 2,
+      "conditional_nodes": 2,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\modifier_reentrancy\\cfg__modifier_reentrancy.sol-attack-call(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\modifier_reentrancy\\cfg__modifier_reentrancy.sol-attack-supportsToken().dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\modifier_reentrancy\\call-graph__modifier_reentrancy.sol.attack.call-graph.dot",
+      "actual_contract_name": "attack"
+    },
+    "stage5_highlevel": {
+      "sample_name": "modifier_reentrancy",
+      "source_file": "modifier_reentrancy.sol",
+      "external_call_sites": 0,
+      "critical_state_writes": 0,
+      "state_guards": 0,
+      "call_before_effect": 0,
+      "reentrancy_candidates": 0,
+      "functions_with_candidates": []
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 0,
+    "critical_state_writes": 0,
+    "state_guards": 0,
+    "call_before_effect": 0,
+    "reentrancy_candidates": 0,
+    "functions_with_candidates": []
+  }
+}

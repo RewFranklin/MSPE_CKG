@@ -1,0 +1,162 @@
+{
+  "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+  "source_file": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+  "total_nodes": 73,
+  "total_edges": 70,
+  "evidence_entries": 67,
+  "node_type_counts": {
+    "Assignment": 4,
+    "CFGEntry": 5,
+    "CFGExit": 5,
+    "CFGNode": 9,
+    "Contract": 1,
+    "ExternalCall": 3,
+    "Function": 4,
+    "FunctionCall": 6,
+    "FunctionRef": 2,
+    "InternalCall": 1,
+    "Modifier": 4,
+    "StateRead": 2,
+    "StateVar": 3,
+    "Stmt": 8,
+    "VersionedState": 16
+  },
+  "relation_counts": {
+    "branchTo": 1,
+    "callsExternal": 1,
+    "callsInternal": 1,
+    "containsAssignment": 4,
+    "containsCall": 6,
+    "containsStmt": 8,
+    "entryOf": 5,
+    "entryPointIs": 4,
+    "exitOf": 5,
+    "flowsToExit": 4,
+    "hasFunction": 4,
+    "hasModifier": 4,
+    "hasNext": 4,
+    "hasStateVar": 3,
+    "inFunction": 9,
+    "nextBlock": 3,
+    "readsStateVar": 2,
+    "targetsStateVar": 2
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 30,
+    "stage2_ir": 6,
+    "stage3_ssa": 16,
+    "stage4_control": 24
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 37,
+    "stage2_ir": 5,
+    "stage4_control": 28
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+      "source_file": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 3,
+        "Function": 4,
+        "Modifier": 4,
+        "Stmt": 8,
+        "Assignment": 4,
+        "FunctionCall": 6
+      },
+      "edge_counts": {
+        "hasStateVar": 3,
+        "hasFunction": 4,
+        "hasModifier": 4,
+        "containsStmt": 8,
+        "entryPointIs": 4,
+        "hasNext": 4,
+        "containsAssignment": 4,
+        "containsCall": 6
+      },
+      "functions": [
+        "Put",
+        "Collect",
+        "constructor",
+        "W_WALLET"
+      ],
+      "state_vars": [
+        "Acc",
+        "LogFile",
+        "MinSum"
+      ],
+      "original_contract_name": "W_WALLET"
+    },
+    "stage2_ir": {
+      "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+      "source_file": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+      "ir_file": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3_ir.txt",
+      "node_counts": {
+        "StateRead": 2,
+        "ExternalCall": 3,
+        "InternalCall": 1
+      },
+      "edge_counts": {
+        "readsStateVar": 2,
+        "targetsStateVar": 2,
+        "callsExternal": 1
+      },
+      "external_calls": 3,
+      "internal_calls": 1,
+      "state_writes": 0,
+      "state_reads": 2,
+      "raw_ir_blocks": 26
+    },
+    "stage3_ssa": {
+      "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+      "source_file": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+      "ssa_file": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3_ssa.txt",
+      "node_counts": {
+        "VersionedState": 16
+      },
+      "edge_counts": {},
+      "raw_ssa_blocks": 26,
+      "version_states": 16,
+      "commit_points": 0,
+      "linked_statewrites": 0
+    },
+    "stage4_control": {
+      "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+      "source_file": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+      "functions": 5,
+      "cfg_functions_found": 5,
+      "cfg_nodes": 19,
+      "cfg_edges": 27,
+      "callgraph_edges": 1,
+      "conditional_nodes": 5,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-Collect(uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-fallback().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-Put(uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-slitherConstructorVariables().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-W_WALLET(address).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\call-graph__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol.W_WALLET.call-graph.dot",
+      "actual_contract_name": "W_WALLET"
+    },
+    "stage5_highlevel": {
+      "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+      "source_file": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol",
+      "external_call_sites": 0,
+      "critical_state_writes": 0,
+      "state_guards": 0,
+      "call_before_effect": 0,
+      "reentrancy_candidates": 0,
+      "functions_with_candidates": []
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 0,
+    "critical_state_writes": 0,
+    "state_guards": 0,
+    "call_before_effect": 0,
+    "reentrancy_candidates": 0,
+    "functions_with_candidates": []
+  }
+}

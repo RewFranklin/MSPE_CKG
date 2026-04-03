@@ -1,0 +1,159 @@
+{
+  "sample_name": "Exchange_ERC777",
+  "source_file": "Exchange_ERC777.sol",
+  "total_nodes": 65,
+  "total_edges": 83,
+  "evidence_entries": 51,
+  "node_type_counts": {
+    "Assignment": 1,
+    "CFGEntry": 4,
+    "CFGExit": 4,
+    "CFGNode": 13,
+    "Contract": 1,
+    "ExternalCall": 3,
+    "Function": 3,
+    "FunctionCall": 8,
+    "FunctionRef": 3,
+    "InternalCall": 1,
+    "Modifier": 3,
+    "Require": 2,
+    "StateVar": 1,
+    "Stmt": 12,
+    "VersionedState": 6
+  },
+  "relation_counts": {
+    "callsBuiltin": 2,
+    "callsExternal": 3,
+    "callsInternal": 1,
+    "containsAssignment": 1,
+    "containsCall": 8,
+    "containsRequire": 2,
+    "containsStmt": 12,
+    "entryOf": 4,
+    "entryPointIs": 3,
+    "exitOf": 4,
+    "flowsToExit": 3,
+    "hasFunction": 3,
+    "hasModifier": 3,
+    "hasNext": 9,
+    "hasStateVar": 1,
+    "inFunction": 13,
+    "invokesInternal": 1,
+    "nextBlock": 10
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 31,
+    "stage2_ir": 4,
+    "stage3_ssa": 6,
+    "stage4_control": 27
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 42,
+    "stage2_ir": 4,
+    "stage4_control": 37
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "Exchange_ERC777",
+      "source_file": "Exchange_ERC777.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 1,
+        "Function": 3,
+        "Modifier": 3,
+        "Stmt": 12,
+        "Assignment": 1,
+        "FunctionCall": 8,
+        "Require": 2
+      },
+      "edge_counts": {
+        "hasStateVar": 1,
+        "hasFunction": 3,
+        "hasModifier": 3,
+        "containsStmt": 12,
+        "entryPointIs": 3,
+        "containsAssignment": 1,
+        "containsCall": 8,
+        "hasNext": 9,
+        "containsRequire": 2
+      },
+      "functions": [
+        "constructor",
+        "getInputPrice",
+        "tokenToEthInput",
+        "constructor"
+      ],
+      "state_vars": [
+        "token"
+      ],
+      "original_contract_name": "Exchange"
+    },
+    "stage2_ir": {
+      "sample_name": "Exchange_ERC777",
+      "source_file": "Exchange_ERC777.sol",
+      "ir_file": "Exchange_ERC777_ir.txt",
+      "node_counts": {
+        "ExternalCall": 3,
+        "InternalCall": 1
+      },
+      "edge_counts": {
+        "callsExternal": 3,
+        "invokesInternal": 1
+      },
+      "external_calls": 3,
+      "internal_calls": 1,
+      "state_writes": 0,
+      "state_reads": 0,
+      "raw_ir_blocks": 17
+    },
+    "stage3_ssa": {
+      "sample_name": "Exchange_ERC777",
+      "source_file": "Exchange_ERC777.sol",
+      "ssa_file": "Exchange_ERC777_ssa.txt",
+      "node_counts": {
+        "VersionedState": 6
+      },
+      "edge_counts": {},
+      "raw_ssa_blocks": 17,
+      "version_states": 6,
+      "commit_points": 0,
+      "linked_statewrites": 0
+    },
+    "stage4_control": {
+      "sample_name": "Exchange_ERC777",
+      "source_file": "Exchange_ERC777.sol",
+      "functions": 4,
+      "cfg_functions_found": 4,
+      "cfg_nodes": 21,
+      "cfg_edges": 34,
+      "callgraph_edges": 3,
+      "conditional_nodes": 0,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-constructor(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-getInputPrice(uint256,uint256,uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-receive().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\cfg__Exchange_ERC777.sol-Exchange-tokenToEthInput(uint256).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\Exchange_ERC777\\call-graph__Exchange_ERC777.sol.Exchange.call-graph.dot",
+      "actual_contract_name": "Exchange"
+    },
+    "stage5_highlevel": {
+      "sample_name": "Exchange_ERC777",
+      "source_file": "Exchange_ERC777.sol",
+      "external_call_sites": 0,
+      "critical_state_writes": 0,
+      "state_guards": 0,
+      "call_before_effect": 0,
+      "reentrancy_candidates": 0,
+      "functions_with_candidates": []
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 0,
+    "critical_state_writes": 0,
+    "state_guards": 0,
+    "call_before_effect": 0,
+    "reentrancy_candidates": 0,
+    "functions_with_candidates": []
+  }
+}

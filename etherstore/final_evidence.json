@@ -1,0 +1,312 @@
+{
+  "raw_ir:etherstore.depositFunds.0": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.depositFunds()",
+    "function_name": "depositFunds",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:etherstore.depositFunds.1": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.depositFunds()",
+    "function_name": "depositFunds",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: balances[msg.sender] += msg.value\n\t\tIRs:\n\t\t\tREF_0(uint256) -> balances[msg.sender]\n\t\t\tREF_0(-> balances) = REF_0 + msg.value\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:etherstore.depositFunds.1": {
+    "ref": "raw_ir:etherstore.depositFunds.1",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:etherstore.depositFunds.1.1": {
+    "ref": "raw_ir:etherstore.depositFunds.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:etherstore.withdrawFunds.0": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:etherstore.withdrawFunds.1": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: require(bool)(balances[msg.sender] >= _weiToWithdraw)\n\t\tIRs:\n\t\t\tREF_1(uint256) -> balances[msg.sender]\n\t\t\tTMP_0(bool) = REF_1 >= _weiToWithdraw\n\t\t\tTMP_1(None) = SOLIDITY_CALL require(bool)(TMP_0)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:etherstore.withdrawFunds.1.1": {
+    "ref": "raw_ir:etherstore.withdrawFunds.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:etherstore.withdrawFunds.2": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: require(bool)(_weiToWithdraw <= withdrawalLimit)\n\t\tIRs:\n\t\t\tTMP_2(bool) = _weiToWithdraw <= withdrawalLimit\n\t\t\tTMP_3(None) = SOLIDITY_CALL require(bool)(TMP_2)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:etherstore.withdrawFunds.3": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: require(bool)(now >= lastWithdrawTime[msg.sender] + 604800)\n\t\tIRs:\n\t\t\tREF_2(uint256) -> lastWithdrawTime[msg.sender]\n\t\t\tTMP_4(uint256) = REF_2 + 604800\n\t\t\tTMP_5(bool) = now >= TMP_4\n\t\t\tTMP_6(None) = SOLIDITY_CALL require(bool)(TMP_5)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:etherstore.withdrawFunds.3.1": {
+    "ref": "raw_ir:etherstore.withdrawFunds.3",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:etherstore.withdrawFunds.4": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: require(bool)(msg.sender.call.value(_weiToWithdraw)())\n\t\tIRs:\n\t\t\tTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_weiToWithdraw \n\t\t\tTMP_9(None) = SOLIDITY_CALL require(bool)(TMP_8)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:etherstore.withdrawFunds.4": {
+    "ref": "raw_ir:etherstore.withdrawFunds.4",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:etherstore.withdrawFunds.5": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ir_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: balances[msg.sender] -= _weiToWithdraw\n\t\tIRs:\n\t\t\tREF_5(uint256) -> balances[msg.sender]\n\t\t\tREF_5(-> balances) = REF_5 - _weiToWithdraw\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:etherstore.withdrawFunds.5": {
+    "ref": "raw_ir:etherstore.withdrawFunds.5",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:etherstore.withdrawFunds.5.1": {
+    "ref": "raw_ir:etherstore.withdrawFunds.5",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:etherstore.withdrawFunds.6": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ir_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: EXPRESSION\n\t\tExpression: lastWithdrawTime[msg.sender] = now\n\t\tIRs:\n\t\t\tREF_6(uint256) -> lastWithdrawTime[msg.sender]\n\t\t\tREF_6(uint256) (->lastWithdrawTime) := now(uint256)\n\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:etherstore.withdrawFunds.6.1": {
+    "ref": "raw_ir:etherstore.withdrawFunds.6",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ssa:etherstore.depositFunds.0": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.depositFunds()",
+    "function_name": "depositFunds",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tbalances_1(mapping(address => uint256)) := ϕ(['balances_2', 'balances_0', 'balances_5'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:etherstore.depositFunds.1": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.depositFunds()",
+    "function_name": "depositFunds",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: balances[msg.sender] += msg.value\n\t\tSSA IRs:\n\t\t\tREF_0(uint256) -> balances_1[msg.sender]\n\t\t\tbalances_2(mapping(address => uint256)) := ϕ(['balances_1'])\n\t\t\tREF_0(-> balances_2) = REF_0 + msg.value\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:etherstore.depositFunds.1__stage3_ssa": {
+    "ref": "raw_ssa:etherstore.depositFunds.1"
+  },
+  "raw_ssa:etherstore.withdrawFunds.0": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\twithdrawalLimit_1(uint256) := ϕ(['withdrawalLimit_0'])\n\t\t\tlastWithdrawTime_1(mapping(address => uint256)) := ϕ(['lastWithdrawTime_0', 'lastWithdrawTime_2'])\n\t\t\tbalances_3(mapping(address => uint256)) := ϕ(['balances_2', 'balances_0', 'balances_5'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:etherstore.withdrawFunds.1": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: require(bool)(balances[msg.sender] >= _weiToWithdraw)\n\t\tSSA IRs:\n\t\t\tREF_1(uint256) -> balances_3[msg.sender]\n\t\t\tTMP_0(bool) = REF_1 >= _weiToWithdraw_1\n\t\t\tTMP_1(None) = SOLIDITY_CALL require(bool)(TMP_0)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:etherstore.withdrawFunds.2": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: require(bool)(_weiToWithdraw <= withdrawalLimit)\n\t\tSSA IRs:\n\t\t\tTMP_2(bool) = _weiToWithdraw_1 <= withdrawalLimit_1\n\t\t\tTMP_3(None) = SOLIDITY_CALL require(bool)(TMP_2)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:etherstore.withdrawFunds.3": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: require(bool)(now >= lastWithdrawTime[msg.sender] + 604800)\n\t\tSSA IRs:\n\t\t\tREF_2(uint256) -> lastWithdrawTime_1[msg.sender]\n\t\t\tTMP_4(uint256) = REF_2 + 604800\n\t\t\tTMP_5(bool) = now >= TMP_4\n\t\t\tTMP_6(None) = SOLIDITY_CALL require(bool)(TMP_5)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:etherstore.withdrawFunds.4": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: require(bool)(msg.sender.call.value(_weiToWithdraw)())\n\t\tSSA IRs:\n\t\t\tTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_weiToWithdraw_1 \n\t\t\tbalances_4(mapping(address => uint256)) := ϕ(['balances_2', 'balances_3', 'balances_5'])\n\t\t\tTMP_9(None) = SOLIDITY_CALL require(bool)(TMP_8)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:etherstore.withdrawFunds.5": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ssa_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: balances[msg.sender] -= _weiToWithdraw\n\t\tSSA IRs:\n\t\t\tREF_5(uint256) -> balances_4[msg.sender]\n\t\t\tbalances_5(mapping(address => uint256)) := ϕ(['balances_4'])\n\t\t\tREF_5(-> balances_5) = REF_5 - _weiToWithdraw_1\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:etherstore.withdrawFunds.5__stage3_ssa": {
+    "ref": "raw_ssa:etherstore.withdrawFunds.5"
+  },
+  "raw_ssa:etherstore.withdrawFunds.6": {
+    "sample_name": "etherstore",
+    "function": "EtherStore.withdrawFunds(uint256)",
+    "function_name": "withdrawFunds",
+    "ssa_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: EXPRESSION\n\t\tExpression: lastWithdrawTime[msg.sender] = now\n\t\tSSA IRs:\n\t\t\tREF_6(uint256) -> lastWithdrawTime_1[msg.sender]\n\t\t\tlastWithdrawTime_2(mapping(address => uint256)) := ϕ(['lastWithdrawTime_1'])\n\t\t\tREF_6(uint256) (->lastWithdrawTime_2) := now(uint256)\n\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "cfgnode:etherstore.etherstore.withdrawFunds.2": {
+    "sample_name": "etherstore",
+    "contract_name": "etherstore",
+    "actual_contract_name": "EtherStore",
+    "function_name": "withdrawFunds",
+    "function_signature": "withdrawFunds(uint256)",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: EXPRESSION 2\n\nEXPRESSION:\nrequire(bool)(_weiToWithdraw <= withdrawalLimit)\n\nIRs:\nTMP_2(bool) = _weiToWithdraw <= withdrawalLimit\nTMP_3(None) = SOLIDITY_CALL require(bool)(TMP_2)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\etherstore\\cfg__etherstore.sol-EtherStore-withdrawFunds(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:etherstore.etherstore.withdrawFunds.4": {
+    "sample_name": "etherstore",
+    "contract_name": "etherstore",
+    "actual_contract_name": "EtherStore",
+    "function_name": "withdrawFunds",
+    "function_signature": "withdrawFunds(uint256)",
+    "dot_node_id": "4",
+    "dot_label": "Node Type: EXPRESSION 4\n\nEXPRESSION:\nrequire(bool)(msg.sender.call.value(_weiToWithdraw)())\n\nIRs:\nTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_weiToWithdraw \nTMP_9(None) = SOLIDITY_CALL require(bool)(TMP_8)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\etherstore\\cfg__etherstore.sol-EtherStore-withdrawFunds(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "reentrancycandidate:etherstore.withdrawFunds.4.balances": {
+    "sample_name": "etherstore",
+    "function_name": "withdrawFunds",
+    "state_var": "balances",
+    "external_call_node": "externalcall:etherstore.withdrawFunds.4",
+    "external_call_stmt_index": 4,
+    "critical_write_nodes": [
+      "statewrite:etherstore.withdrawFunds.5"
+    ],
+    "critical_write_stmt_indices": [
+      5
+    ],
+    "require_stmt_indices": [
+      1,
+      2,
+      3
+    ],
+    "pre_call_state_read_nodes": [
+      "stateread:etherstore.withdrawFunds.1.1"
+    ],
+    "_layers": [
+      "stage5_highlevel"
+    ]
+  },
+  "reentrancycandidate:etherstore.withdrawFunds.4.lastWithdrawTime": {
+    "sample_name": "etherstore",
+    "function_name": "withdrawFunds",
+    "state_var": "lastWithdrawTime",
+    "external_call_node": "externalcall:etherstore.withdrawFunds.4",
+    "external_call_stmt_index": 4,
+    "critical_write_nodes": [
+      "inferredwrite:assign:etherstore.withdrawFunds.6.1.lastWithdrawTime"
+    ],
+    "critical_write_stmt_indices": [
+      6
+    ],
+    "require_stmt_indices": [
+      1,
+      2,
+      3
+    ],
+    "pre_call_state_read_nodes": [
+      "stateread:etherstore.withdrawFunds.3.1"
+    ],
+    "_layers": [
+      "stage5_highlevel"
+    ]
+  }
+}

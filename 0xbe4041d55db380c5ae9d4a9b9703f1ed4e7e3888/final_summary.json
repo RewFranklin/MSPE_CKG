@@ -1,0 +1,164 @@
+{
+  "sample_name": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888",
+  "source_file": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol",
+  "total_nodes": 96,
+  "total_edges": 103,
+  "evidence_entries": 92,
+  "node_type_counts": {
+    "Assignment": 6,
+    "CFGEntry": 6,
+    "CFGExit": 6,
+    "CFGNode": 16,
+    "Contract": 1,
+    "ExternalCall": 3,
+    "Function": 6,
+    "FunctionCall": 6,
+    "FunctionRef": 1,
+    "InternalCall": 1,
+    "Modifier": 6,
+    "StateRead": 2,
+    "StateVar": 4,
+    "Stmt": 12,
+    "VersionedState": 20
+  },
+  "relation_counts": {
+    "branchTo": 5,
+    "callsInternal": 1,
+    "containsAssignment": 6,
+    "containsCall": 6,
+    "containsStmt": 12,
+    "entryOf": 6,
+    "entryPointIs": 6,
+    "exitOf": 6,
+    "flowsToExit": 8,
+    "hasFunction": 6,
+    "hasModifier": 6,
+    "hasNext": 6,
+    "hasStateVar": 4,
+    "inFunction": 16,
+    "nextBlock": 5,
+    "readsStateVar": 2,
+    "targetsStateVar": 2
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 41,
+    "stage2_ir": 6,
+    "stage3_ssa": 20,
+    "stage4_control": 34
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 52,
+    "stage2_ir": 4,
+    "stage4_control": 47
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888",
+      "source_file": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 4,
+        "Function": 6,
+        "Modifier": 6,
+        "Stmt": 12,
+        "Assignment": 6,
+        "FunctionCall": 6
+      },
+      "edge_counts": {
+        "hasStateVar": 4,
+        "hasFunction": 6,
+        "hasModifier": 6,
+        "containsStmt": 12,
+        "entryPointIs": 6,
+        "hasNext": 6,
+        "containsAssignment": 6,
+        "containsCall": 6
+      },
+      "functions": [
+        "SetMinSum",
+        "SetLogFile",
+        "Initialized",
+        "Put",
+        "Collect",
+        "constructor"
+      ],
+      "state_vars": [
+        "Acc",
+        "MinSum",
+        "LogFile",
+        "intitalized"
+      ],
+      "original_contract_name": "MONEY_BOX"
+    },
+    "stage2_ir": {
+      "sample_name": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888",
+      "source_file": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol",
+      "ir_file": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888_ir.txt",
+      "node_counts": {
+        "StateRead": 2,
+        "ExternalCall": 3,
+        "InternalCall": 1
+      },
+      "edge_counts": {
+        "readsStateVar": 2,
+        "targetsStateVar": 2
+      },
+      "external_calls": 3,
+      "internal_calls": 1,
+      "state_writes": 0,
+      "state_reads": 2,
+      "raw_ir_blocks": 35
+    },
+    "stage3_ssa": {
+      "sample_name": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888",
+      "source_file": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol",
+      "ssa_file": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888_ssa.txt",
+      "node_counts": {
+        "VersionedState": 20
+      },
+      "edge_counts": {},
+      "raw_ssa_blocks": 35,
+      "version_states": 20,
+      "commit_points": 0,
+      "linked_statewrites": 0
+    },
+    "stage4_control": {
+      "sample_name": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888",
+      "source_file": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol",
+      "functions": 6,
+      "cfg_functions_found": 6,
+      "cfg_nodes": 28,
+      "cfg_edges": 46,
+      "callgraph_edges": 1,
+      "conditional_nodes": 8,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888\\cfg__0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol-MONEY_BOX-Collect(uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888\\cfg__0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol-MONEY_BOX-fallback().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888\\cfg__0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol-MONEY_BOX-Initialized().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888\\cfg__0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol-MONEY_BOX-Put(uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888\\cfg__0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol-MONEY_BOX-SetLogFile(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888\\cfg__0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol-MONEY_BOX-SetMinSum(uint256).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888\\call-graph__0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol.MONEY_BOX.call-graph.dot",
+      "actual_contract_name": "MONEY_BOX"
+    },
+    "stage5_highlevel": {
+      "sample_name": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888",
+      "source_file": "0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol",
+      "external_call_sites": 0,
+      "critical_state_writes": 0,
+      "state_guards": 0,
+      "call_before_effect": 0,
+      "reentrancy_candidates": 0,
+      "functions_with_candidates": []
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 0,
+    "critical_state_writes": 0,
+    "state_guards": 0,
+    "call_before_effect": 0,
+    "reentrancy_candidates": 0,
+    "functions_with_candidates": []
+  }
+}

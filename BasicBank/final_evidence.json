@@ -1,0 +1,349 @@
+{
+  "raw_ir:BasicBank.constructor.0": {
+    "sample_name": "BasicBank",
+    "function": "source.constructor(address)",
+    "function_name": "constructor",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.constructor.1": {
+    "sample_name": "BasicBank",
+    "function": "source.constructor(address)",
+    "function_name": "constructor",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: commissionCollector = _commissionCollector\n\t\tIRs:\n\t\t\tcommissionCollector(address) := _commissionCollector(address)\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.deposit.0": {
+    "sample_name": "BasicBank",
+    "function": "source.deposit()",
+    "function_name": "deposit",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.deposit.1": {
+    "sample_name": "BasicBank",
+    "function": "source.deposit()",
+    "function_name": "deposit",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: userFunds[msg.sender] += msg.value\n\t\tIRs:\n\t\t\tREF_0(uint256) -> userFunds[msg.sender]\n\t\t\tREF_0(-> userFunds) = REF_0 + msg.value\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:BasicBank.deposit.1": {
+    "ref": "raw_ir:BasicBank.deposit.1",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:BasicBank.deposit.1.1": {
+    "ref": "raw_ir:BasicBank.deposit.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.withdraw.0": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.withdraw.1": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: require(bool)(getBalance(msg.sender) >= _amount)\n\t\tIRs:\n\t\t\tTMP_0(uint256) = INTERNAL_CALL, source.getBalance(address)(msg.sender)\n\t\t\tTMP_1(bool) = TMP_0 >= _amount\n\t\t\tTMP_2(None) = SOLIDITY_CALL require(bool)(TMP_1)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "internalcall:BasicBank.withdraw.1.1": {
+    "ref": "raw_ir:BasicBank.withdraw.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.withdraw.2": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: msg.sender.call{value: _amount}()\n\t\tIRs:\n\t\t\tTUPLE_0(bool,bytes) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[''] value:_amount \n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:BasicBank.withdraw.2": {
+    "ref": "raw_ir:BasicBank.withdraw.2",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.withdraw.3": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: userFunds[msg.sender] -= _amount\n\t\tIRs:\n\t\t\tREF_2(uint256) -> userFunds[msg.sender]\n\t\t\tREF_2(-> userFunds) = REF_2 - _amount\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:BasicBank.withdraw.3": {
+    "ref": "raw_ir:BasicBank.withdraw.3",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:BasicBank.withdraw.3.1": {
+    "ref": "raw_ir:BasicBank.withdraw.3",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.withdraw.4": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: userFunds[commissionCollector] += _amount / 100\n\t\tIRs:\n\t\t\tREF_3(uint256) -> userFunds[commissionCollector]\n\t\t\tTMP_3(uint256) = _amount / 100\n\t\t\tREF_3(-> userFunds) = REF_3 + TMP_3\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:BasicBank.withdraw.4": {
+    "ref": "raw_ir:BasicBank.withdraw.4",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:BasicBank.withdraw.4.1": {
+    "ref": "raw_ir:BasicBank.withdraw.4",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.getBalance.0": {
+    "sample_name": "BasicBank",
+    "function": "source.getBalance(address)",
+    "function_name": "getBalance",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:BasicBank.getBalance.1": {
+    "sample_name": "BasicBank",
+    "function": "source.getBalance(address)",
+    "function_name": "getBalance",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: RETURN\n\t\tExpression: userFunds[_user]\n\t\tIRs:\n\t\t\tREF_4(uint256) -> userFunds[_user]\n\t\t\tRETURN REF_4\n\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:BasicBank.getBalance.1.1": {
+    "ref": "raw_ir:BasicBank.getBalance.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ssa:BasicBank.constructor.0": {
+    "sample_name": "BasicBank",
+    "function": "source.constructor(address)",
+    "function_name": "constructor",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:BasicBank.constructor.1": {
+    "sample_name": "BasicBank",
+    "function": "source.constructor(address)",
+    "function_name": "constructor",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: commissionCollector = _commissionCollector\n\t\tSSA IRs:\n\t\t\tcommissionCollector_1(address) := _commissionCollector_1(address)\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:BasicBank.deposit.0": {
+    "sample_name": "BasicBank",
+    "function": "source.deposit()",
+    "function_name": "deposit",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tuserFunds_1(mapping(address => uint256)) := ϕ(['userFunds_8', 'userFunds_0', 'userFunds_2', 'userFunds_7'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:BasicBank.deposit.1": {
+    "sample_name": "BasicBank",
+    "function": "source.deposit()",
+    "function_name": "deposit",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: userFunds[msg.sender] += msg.value\n\t\tSSA IRs:\n\t\t\tREF_0(uint256) -> userFunds_1[msg.sender]\n\t\t\tuserFunds_2(mapping(address => uint256)) := ϕ(['userFunds_1'])\n\t\t\tREF_0(-> userFunds_2) = REF_0 + msg.value\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:BasicBank.deposit.1__stage3_ssa": {
+    "ref": "raw_ssa:BasicBank.deposit.1"
+  },
+  "raw_ssa:BasicBank.withdraw.0": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tuserFunds_3(mapping(address => uint256)) := ϕ(['userFunds_8', 'userFunds_0', 'userFunds_2', 'userFunds_7'])\n\t\t\tcommissionCollector_2(address) := ϕ(['commissionCollector_0', 'commissionCollector_4', 'commissionCollector_1'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:BasicBank.withdraw.1": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: require(bool)(getBalance(msg.sender) >= _amount)\n\t\tSSA IRs:\n\t\t\tTMP_0(uint256) = INTERNAL_CALL, source.getBalance(address)(msg.sender)\n\t\t\tuserFunds_4(mapping(address => uint256)) := ϕ(['userFunds_8'])\n\t\t\tTMP_1(bool) = TMP_0 >= _amount_1\n\t\t\tTMP_2(None) = SOLIDITY_CALL require(bool)(TMP_1)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:BasicBank.withdraw.2": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: msg.sender.call{value: _amount}()\n\t\tSSA IRs:\n\t\t\tTUPLE_0(bool,bytes) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[''] value:_amount_1 \n\t\t\tuserFunds_5(mapping(address => uint256)) := ϕ(['userFunds_2', 'userFunds_7', 'userFunds_8', 'userFunds_4'])\n\t\t\tcommissionCollector_4(address) := ϕ(['commissionCollector_3', 'commissionCollector_4', 'commissionCollector_1'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:BasicBank.withdraw.3": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: userFunds[msg.sender] -= _amount\n\t\tSSA IRs:\n\t\t\tREF_2(uint256) -> userFunds_5[msg.sender]\n\t\t\tuserFunds_6(mapping(address => uint256)) := ϕ(['userFunds_5'])\n\t\t\tREF_2(-> userFunds_6) = REF_2 - _amount_1\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:BasicBank.withdraw.3__stage3_ssa": {
+    "ref": "raw_ssa:BasicBank.withdraw.3"
+  },
+  "raw_ssa:BasicBank.withdraw.4": {
+    "sample_name": "BasicBank",
+    "function": "source.withdraw(uint256)",
+    "function_name": "withdraw",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: userFunds[commissionCollector] += _amount / 100\n\t\tSSA IRs:\n\t\t\tREF_3(uint256) -> userFunds_6[commissionCollector_4]\n\t\t\tTMP_3(uint256) = _amount_1 / 100\n\t\t\tuserFunds_7(mapping(address => uint256)) := ϕ(['userFunds_6'])\n\t\t\tREF_3(-> userFunds_7) = REF_3 + TMP_3\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:BasicBank.withdraw.4__stage3_ssa": {
+    "ref": "raw_ssa:BasicBank.withdraw.4"
+  },
+  "raw_ssa:BasicBank.getBalance.0": {
+    "sample_name": "BasicBank",
+    "function": "source.getBalance(address)",
+    "function_name": "getBalance",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\t_user_1(address) := ϕ(['msg.sender'])\n\t\t\tuserFunds_8(mapping(address => uint256)) := ϕ(['userFunds_8', 'userFunds_0', 'userFunds_2', 'userFunds_7'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:BasicBank.getBalance.1": {
+    "sample_name": "BasicBank",
+    "function": "source.getBalance(address)",
+    "function_name": "getBalance",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: RETURN\n\t\tExpression: userFunds[_user]\n\t\tSSA IRs:\n\t\t\tREF_4(uint256) -> userFunds_8[_user_1]\n\t\t\tRETURN REF_4\n\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "cfgnode:BasicBank.BasicBank.constructor.1": {
+    "sample_name": "BasicBank",
+    "contract_name": "BasicBank",
+    "actual_contract_name": "BasicBank",
+    "function_name": "constructor",
+    "function_signature": "constructor(address)",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: EXPRESSION 1\n\nEXPRESSION:\ncommissionCollector = _commissionCollector\n\nIRs:\ncommissionCollector(address) := _commissionCollector(address)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\BasicBank\\cfg__BasicBank.sol-BasicBank-constructor(address).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:BasicBank.BasicBank.withdraw.1": {
+    "sample_name": "BasicBank",
+    "contract_name": "BasicBank",
+    "actual_contract_name": "BasicBank",
+    "function_name": "withdraw",
+    "function_signature": "withdraw(uint256)",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: EXPRESSION 1\n\nEXPRESSION:\nrequire(bool)(getBalance(msg.sender) >= _amount)\n\nIRs:\nTMP_0(uint256) = INTERNAL_CALL, BasicBank.getBalance(address)(msg.sender)\nTMP_1(bool) = TMP_0 >= _amount\nTMP_2(None) = SOLIDITY_CALL require(bool)(TMP_1)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\BasicBank\\cfg__BasicBank.sol-BasicBank-withdraw(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:BasicBank.BasicBank.withdraw.2": {
+    "sample_name": "BasicBank",
+    "contract_name": "BasicBank",
+    "actual_contract_name": "BasicBank",
+    "function_name": "withdraw",
+    "function_signature": "withdraw(uint256)",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: EXPRESSION 2\n\nEXPRESSION:\nmsg.sender.call{value: _amount}()\n\nIRs:\nTUPLE_0(bool,bytes) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[''] value:_amount ",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\BasicBank\\cfg__BasicBank.sol-BasicBank-withdraw(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "reentrancycandidate:BasicBank.withdraw.2.userFunds": {
+    "sample_name": "BasicBank",
+    "function_name": "withdraw",
+    "state_var": "userFunds",
+    "external_call_node": "externalcall:BasicBank.withdraw.2",
+    "external_call_stmt_index": 2,
+    "critical_write_nodes": [
+      "statewrite:BasicBank.withdraw.3",
+      "statewrite:BasicBank.withdraw.4"
+    ],
+    "critical_write_stmt_indices": [
+      3,
+      4
+    ],
+    "require_stmt_indices": [
+      1
+    ],
+    "pre_call_state_read_nodes": [],
+    "_layers": [
+      "stage5_highlevel"
+    ]
+  }
+}

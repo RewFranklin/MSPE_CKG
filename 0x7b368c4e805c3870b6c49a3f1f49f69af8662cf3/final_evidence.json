@@ -1,0 +1,675 @@
+{
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: acc = Acc[msg.sender]\n\t\tIRs:\n\t\t\tREF_0(W_WALLET.Holder) -> Acc[msg.sender]\n\t\t\tacc(W_WALLET.Holder) := REF_0(W_WALLET.Holder)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.1.1": {
+    "ref": "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.2": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: acc.balance += msg.value\n\t\tIRs:\n\t\t\tREF_1(uint256) -> acc.balance\n\t\t\tREF_1(-> acc) = REF_1 + msg.value\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.4": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: LogFile.AddMessage(msg.sender,msg.value,Put)\n\t\tIRs:\n\t\t\tHIGH_LEVEL_CALL, dest:LogFile(Log), function:AddMessage, arguments:['msg.sender', 'msg.value', 'Put']  \n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.4": {
+    "ref": "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.4",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.5": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ir_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: IF\n\t\tExpression: _unlockTime > now\n\t\tIRs:\n\t\t\tTMP_1(bool) = _unlockTime > now\n\t\t\tCONDITION TMP_1\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.6": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ir_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: EXPRESSION\n\t\tExpression: acc.unlockTime = _unlockTime\n\t\tIRs:\n\t\t\tREF_3(uint256) -> acc.unlockTime\n\t\t\tREF_3(uint256) (->acc) := _unlockTime(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.7": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ir_stmt_index": 7,
+    "raw": "\t\tNode[7] Type: EXPRESSION\n\t\tExpression: acc.unlockTime = now\n\t\tIRs:\n\t\t\tREF_4(uint256) -> acc.unlockTime\n\t\t\tREF_4(uint256) (->acc) := now(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.8": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ir_stmt_index": 8,
+    "raw": "\t\tNode[8] Type: END_IF\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: acc = Acc[msg.sender]\n\t\tIRs:\n\t\t\tREF_5(W_WALLET.Holder) -> Acc[msg.sender]\n\t\t\tacc(W_WALLET.Holder) := REF_5(W_WALLET.Holder)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.1.1": {
+    "ref": "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.2": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: IF\n\t\tExpression: acc.balance >= MinSum && acc.balance >= _am && now > acc.unlockTime\n\t\tIRs:\n\t\t\tREF_6(uint256) -> acc.balance\n\t\t\tTMP_2(bool) = REF_6 >= MinSum\n\t\t\tREF_7(uint256) -> acc.balance\n\t\t\tTMP_3(bool) = REF_7 >= _am\n\t\t\tTMP_4(bool) = TMP_2 && TMP_3\n\t\t\tREF_8(uint256) -> acc.unlockTime\n\t\t\tTMP_5(bool) = now > REF_8\n\t\t\tTMP_6(bool) = TMP_4 && TMP_5\n\t\t\tCONDITION TMP_6\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.3": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: IF\n\t\tExpression: msg.sender.call.value(_am)()\n\t\tIRs:\n\t\t\tTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \n\t\t\tCONDITION TMP_8\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.3": {
+    "ref": "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.3",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.4": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: acc.balance -= _am\n\t\tIRs:\n\t\t\tREF_11(uint256) -> acc.balance\n\t\t\tREF_11(-> acc) = REF_11 - _am\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.5": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ir_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: LogFile.AddMessage(msg.sender,_am,Collect)\n\t\tIRs:\n\t\t\tHIGH_LEVEL_CALL, dest:LogFile(Log), function:AddMessage, arguments:['msg.sender', '_am', 'Collect']  \n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.5": {
+    "ref": "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.5",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.6": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ir_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: END_IF\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.7": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ir_stmt_index": 7,
+    "raw": "\t\tNode[7] Type: END_IF\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.fallback.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.fallback()",
+    "function_name": "fallback",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.fallback.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.fallback()",
+    "function_name": "fallback",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: Put(0)\n\t\tIRs:\n\t\t\tINTERNAL_CALL, W_WALLET.Put(uint256)(0)\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "internalcall:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.fallback.1.1": {
+    "ref": "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.fallback.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.W_WALLET.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.W_WALLET(address)",
+    "function_name": "W_WALLET",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.W_WALLET.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.W_WALLET(address)",
+    "function_name": "W_WALLET",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: LogFile = Log(log)\n\t\tIRs:\n\t\t\tTMP_11 = CONVERT log to Log\n\t\t\tLogFile(Log) := TMP_11(Log)\n\n\n\nContract Log",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: LastMsg.Sender = _adr\n\t\tIRs:\n\t\t\tREF_13(address) -> LastMsg.Sender\n\t\t\tREF_13(address) (->LastMsg) := _adr(address)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.2": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: LastMsg.Time = now\n\t\tIRs:\n\t\t\tREF_14(uint256) -> LastMsg.Time\n\t\t\tREF_14(uint256) (->LastMsg) := now(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.3": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: LastMsg.Val = _val\n\t\tIRs:\n\t\t\tREF_15(uint256) -> LastMsg.Val\n\t\t\tREF_15(uint256) (->LastMsg) := _val(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.4": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: LastMsg.Data = _data\n\t\tIRs:\n\t\t\tREF_16(string) -> LastMsg.Data\n\t\t\tREF_16(string) (->LastMsg) := _data(string)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.5": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: History.push(LastMsg)\n\t\tIRs:\n\t\t\tREF_18 -> LENGTH History\n\t\t\tTMP_13(uint256) := REF_18(uint256)\n\t\t\tTMP_14(uint256) = TMP_13 + 1\n\t\t\tREF_18(uint256) (->History) := TMP_14(uint256)\n\t\t\tREF_19(Log.Message) -> History[TMP_13]\n\t\t\tREF_19(Log.Message) (->History) := LastMsg(Log.Message)\n\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tAcc_1(mapping(address => W_WALLET.Holder)) := ϕ(['Acc_6', 'Acc_0', 'Acc_5', 'Acc_4', 'Acc_3'])\n\t\t\tLogFile_1(Log) := ϕ(['LogFile_2', 'LogFile_5', 'LogFile_4', 'LogFile_0', 'LogFile_6'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: acc = Acc[msg.sender]\n\t\tSSA IRs:\n\t\t\tREF_0(W_WALLET.Holder) -> Acc_1[msg.sender]\n\t\t\tacc_1 (-> ['Acc'])(W_WALLET.Holder) := REF_0(W_WALLET.Holder)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.2": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: acc.balance += msg.value\n\t\tSSA IRs:\n\t\t\tREF_1(uint256) -> acc_1 (-> ['Acc']).balance\n\t\t\tacc_2 (-> ['Acc'])(W_WALLET.Holder) := ϕ([\"acc_1 (-> ['Acc'])\"])\n\t\t\tREF_1(-> acc_2 (-> ['Acc'])) = REF_1 + msg.value\n\t\t\tAcc_2(mapping(address => W_WALLET.Holder)) := ϕ([\"acc_2 (-> ['Acc'])\"])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.4": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: LogFile.AddMessage(msg.sender,msg.value,Put)\n\t\tSSA IRs:\n\t\t\tHIGH_LEVEL_CALL, dest:LogFile_1(Log), function:AddMessage, arguments:['msg.sender', 'msg.value', 'Put']  \n\t\t\tLogFile_2(Log) := ϕ(['LogFile_6', 'LogFile_2', 'LogFile_5', 'LogFile_4', 'LogFile_1'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.5": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ssa_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: IF\n\t\tExpression: _unlockTime > now\n\t\tSSA IRs:\n\t\t\tTMP_1(bool) = _unlockTime_1 > now\n\t\t\tCONDITION TMP_1\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.6": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ssa_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: EXPRESSION\n\t\tExpression: acc.unlockTime = _unlockTime\n\t\tSSA IRs:\n\t\t\tREF_3(uint256) -> acc_2 (-> ['Acc']).unlockTime\n\t\t\tacc_3 (-> ['Acc'])(W_WALLET.Holder) := ϕ([\"acc_2 (-> ['Acc'])\"])\n\t\t\tREF_3(uint256) (->acc_3 (-> ['Acc'])) := _unlockTime_1(uint256)\n\t\t\tAcc_3(mapping(address => W_WALLET.Holder)) := ϕ([\"acc_3 (-> ['Acc'])\"])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.7": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ssa_stmt_index": 7,
+    "raw": "\t\tNode[7] Type: EXPRESSION\n\t\tExpression: acc.unlockTime = now\n\t\tSSA IRs:\n\t\t\tREF_4(uint256) -> acc_2 (-> ['Acc']).unlockTime\n\t\t\tacc_4 (-> ['Acc'])(W_WALLET.Holder) := ϕ([\"acc_2 (-> ['Acc'])\"])\n\t\t\tREF_4(uint256) (->acc_4 (-> ['Acc'])) := now(uint256)\n\t\t\tAcc_4(mapping(address => W_WALLET.Holder)) := ϕ([\"acc_4 (-> ['Acc'])\"])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.8": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Put(uint256)",
+    "function_name": "Put",
+    "ssa_stmt_index": 8,
+    "raw": "\t\tNode[8] Type: END_IF\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tAcc_5(mapping(address => W_WALLET.Holder)) := ϕ(['Acc_6', 'Acc_0', 'Acc_5', 'Acc_4', 'Acc_3'])\n\t\t\tLogFile_3(Log) := ϕ(['LogFile_2', 'LogFile_5', 'LogFile_4', 'LogFile_0', 'LogFile_6'])\n\t\t\tMinSum_1(uint256) := ϕ(['MinSum_0'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: NEW VARIABLE\n\t\tExpression: acc = Acc[msg.sender]\n\t\tSSA IRs:\n\t\t\tREF_5(W_WALLET.Holder) -> Acc_5[msg.sender]\n\t\t\tacc_1 (-> ['Acc'])(W_WALLET.Holder) := REF_5(W_WALLET.Holder)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.2": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: IF\n\t\tExpression: acc.balance >= MinSum && acc.balance >= _am && now > acc.unlockTime\n\t\tSSA IRs:\n\t\t\tREF_6(uint256) -> acc_1 (-> ['Acc']).balance\n\t\t\tTMP_2(bool) = REF_6 >= MinSum_1\n\t\t\tREF_7(uint256) -> acc_1 (-> ['Acc']).balance\n\t\t\tTMP_3(bool) = REF_7 >= _am_1\n\t\t\tTMP_4(bool) = TMP_2 && TMP_3\n\t\t\tREF_8(uint256) -> acc_1 (-> ['Acc']).unlockTime\n\t\t\tTMP_5(bool) = now > REF_8\n\t\t\tTMP_6(bool) = TMP_4 && TMP_5\n\t\t\tCONDITION TMP_6\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.3": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: IF\n\t\tExpression: msg.sender.call.value(_am)()\n\t\tSSA IRs:\n\t\t\tTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am_1 \n\t\t\tLogFile_4(Log) := ϕ(['LogFile_3', 'LogFile_2', 'LogFile_5', 'LogFile_4', 'LogFile_6'])\n\t\t\tCONDITION TMP_8\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.4": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: acc.balance -= _am\n\t\tSSA IRs:\n\t\t\tREF_11(uint256) -> acc_1 (-> ['Acc']).balance\n\t\t\tacc_2 (-> ['Acc'])(W_WALLET.Holder) := ϕ([\"acc_1 (-> ['Acc'])\"])\n\t\t\tREF_11(-> acc_2 (-> ['Acc'])) = REF_11 - _am_1\n\t\t\tAcc_6(mapping(address => W_WALLET.Holder)) := ϕ([\"acc_2 (-> ['Acc'])\"])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.5": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ssa_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: LogFile.AddMessage(msg.sender,_am,Collect)\n\t\tSSA IRs:\n\t\t\tHIGH_LEVEL_CALL, dest:LogFile_4(Log), function:AddMessage, arguments:['msg.sender', '_am_1', 'Collect']  \n\t\t\tLogFile_5(Log) := ϕ(['LogFile_2', 'LogFile_5', 'LogFile_4', 'LogFile_6'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.6": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ssa_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: END_IF\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.7": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.Collect(uint256)",
+    "function_name": "Collect",
+    "ssa_stmt_index": 7,
+    "raw": "\t\tNode[7] Type: END_IF\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.fallback.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.fallback()",
+    "function_name": "fallback",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.fallback.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.fallback()",
+    "function_name": "fallback",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: Put(0)\n\t\tSSA IRs:\n\t\t\tINTERNAL_CALL, W_WALLET.Put(uint256)(0)\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.W_WALLET.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.W_WALLET(address)",
+    "function_name": "W_WALLET",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.W_WALLET.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "W_WALLET.W_WALLET(address)",
+    "function_name": "W_WALLET",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: LogFile = Log(log)\n\t\tSSA IRs:\n\t\t\tTMP_11 = CONVERT log_1 to Log\n\t\t\tLogFile_6(Log) := TMP_11(Log)\n\n\n\nContract Log",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.0": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tHistory_1(Log.Message[]) := ϕ(['History_3', 'History_0'])\n\t\t\tLastMsg_1(Log.Message) := ϕ(['LastMsg_0', 'LastMsg_5'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: LastMsg.Sender = _adr\n\t\tSSA IRs:\n\t\t\tREF_13(address) -> LastMsg_1.Sender\n\t\t\tLastMsg_2(Log.Message) := ϕ(['LastMsg_1'])\n\t\t\tREF_13(address) (->LastMsg_2) := _adr_1(address)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.2": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: LastMsg.Time = now\n\t\tSSA IRs:\n\t\t\tREF_14(uint256) -> LastMsg_2.Time\n\t\t\tLastMsg_3(Log.Message) := ϕ(['LastMsg_2'])\n\t\t\tREF_14(uint256) (->LastMsg_3) := now(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.3": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: LastMsg.Val = _val\n\t\tSSA IRs:\n\t\t\tREF_15(uint256) -> LastMsg_3.Val\n\t\t\tLastMsg_4(Log.Message) := ϕ(['LastMsg_3'])\n\t\t\tREF_15(uint256) (->LastMsg_4) := _val_1(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.4": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: LastMsg.Data = _data\n\t\tSSA IRs:\n\t\t\tREF_16(string) -> LastMsg_4.Data\n\t\t\tLastMsg_5(Log.Message) := ϕ(['LastMsg_4'])\n\t\t\tREF_16(string) (->LastMsg_5) := _data_1(string)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.AddMessage.5": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: History.push(LastMsg)\n\t\tSSA IRs:\n\t\t\tREF_18 -> LENGTH History_1\n\t\t\tTMP_13(uint256) := REF_18(uint256)\n\t\t\tTMP_14(uint256) = TMP_13 + 1\n\t\t\tHistory_2(Log.Message[]) := ϕ(['History_1'])\n\t\t\tREF_18(uint256) (->History_2) := TMP_14(uint256)\n\t\t\tREF_19(Log.Message) -> History_2[TMP_13]\n\t\t\tHistory_3(Log.Message[]) := ϕ(['History_2'])\n\t\t\tREF_19(Log.Message) (->History_3) := LastMsg_5(Log.Message)\n\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "cfgnode:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.3": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "actual_contract_name": "W_WALLET",
+    "function_name": "Collect",
+    "function_signature": "Collect(uint256)",
+    "dot_node_id": "3",
+    "dot_label": "Node Type: IF 3\n\nEXPRESSION:\nmsg.sender.call.value(_am)()\n\nIRs:\nTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \nCONDITION TMP_8",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-Collect(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.5": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "actual_contract_name": "W_WALLET",
+    "function_name": "Collect",
+    "function_signature": "Collect(uint256)",
+    "dot_node_id": "5",
+    "dot_label": "Node Type: EXPRESSION 5\n\nEXPRESSION:\nLogFile.AddMessage(msg.sender,_am,Collect)\n\nIRs:\nHIGH_LEVEL_CALL, dest:LogFile(Log), function:AddMessage, arguments:['msg.sender', '_am', 'Collect']  ",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-Collect(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.6": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "actual_contract_name": "W_WALLET",
+    "function_name": "Collect",
+    "function_signature": "Collect(uint256)",
+    "dot_node_id": "6",
+    "dot_label": "Node Type: END_IF 6\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-Collect(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Collect.7": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "actual_contract_name": "W_WALLET",
+    "function_name": "Collect",
+    "function_signature": "Collect(uint256)",
+    "dot_node_id": "7",
+    "dot_label": "Node Type: END_IF 7\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-Collect(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.fallback.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "actual_contract_name": "W_WALLET",
+    "function_name": "fallback",
+    "function_signature": "fallback()",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: EXPRESSION 1\n\nEXPRESSION:\nPut(0)\n\nIRs:\nINTERNAL_CALL, W_WALLET.Put(uint256)(0)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-fallback().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.4": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "actual_contract_name": "W_WALLET",
+    "function_name": "Put",
+    "function_signature": "Put(uint256)",
+    "dot_node_id": "4",
+    "dot_label": "Node Type: EXPRESSION 4\n\nEXPRESSION:\nLogFile.AddMessage(msg.sender,msg.value,Put)\n\nIRs:\nHIGH_LEVEL_CALL, dest:LogFile(Log), function:AddMessage, arguments:['msg.sender', 'msg.value', 'Put']  ",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-Put(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.5": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "actual_contract_name": "W_WALLET",
+    "function_name": "Put",
+    "function_signature": "Put(uint256)",
+    "dot_node_id": "5",
+    "dot_label": "Node Type: IF 5\n\nEXPRESSION:\n_unlockTime > now\n\nIRs:\nTMP_1(bool) = _unlockTime > now\nCONDITION TMP_1",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-Put(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.Put.8": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "actual_contract_name": "W_WALLET",
+    "function_name": "Put",
+    "function_signature": "Put(uint256)",
+    "dot_node_id": "8",
+    "dot_label": "Node Type: END_IF 8\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-Put(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.W_WALLET.1": {
+    "sample_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "contract_name": "0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3",
+    "actual_contract_name": "W_WALLET",
+    "function_name": "W_WALLET",
+    "function_signature": "W_WALLET(address)",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: EXPRESSION 1\n\nEXPRESSION:\nLogFile = Log(log)\n\nIRs:\nTMP_11 = CONVERT log to Log\nLogFile(Log) := TMP_11(Log)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3\\cfg__0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3.sol-W_WALLET-W_WALLET(address).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sample_name": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+  "source_file": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+  "total_nodes": 110,
+  "total_edges": 131,
+  "evidence_entries": 100,
+  "node_type_counts": {
+    "Assignment": 5,
+    "CFGEntry": 10,
+    "CFGExit": 10,
+    "CFGNode": 22,
+    "CallBeforeEffect": 1,
+    "CommitPoint": 2,
+    "Contract": 1,
+    "CriticalStateWrite": 1,
+    "ExternalCall": 2,
+    "ExternalCallSite": 1,
+    "Function": 5,
+    "FunctionCall": 4,
+    "FunctionRef": 11,
+    "InternalCall": 2,
+    "Modifier": 3,
+    "ReentrancyCandidate": 1,
+    "StateGuard": 1,
+    "StateRead": 5,
+    "StateVar": 2,
+    "StateWrite": 2,
+    "Stmt": 6,
+    "VersionedState": 13
+  },
+  "relation_counts": {
+    "abstractsCall": 1,
+    "abstractsStateWrite": 1,
+    "branchTo": 6,
+    "callsBuiltin": 1,
+    "callsInternal": 6,
+    "candidateInFunction": 1,
+    "candidateTargetsState": 1,
+    "commitsState": 2,
+    "commitsVar": 2,
+    "containsAssignment": 5,
+    "containsCall": 4,
+    "containsStmt": 6,
+    "derivedFrom": 1,
+    "entryOf": 10,
+    "entryPointIs": 5,
+    "exitOf": 10,
+    "flowsToExit": 9,
+    "guardedBy": 1,
+    "hasCallBeforeEffect": 1,
+    "hasCriticalWrite": 2,
+    "hasExternalCall": 2,
+    "hasFunction": 5,
+    "hasModifier": 3,
+    "hasNext": 1,
+    "hasStateVar": 2,
+    "inFunction": 22,
+    "nextBlock": 7,
+    "postStateVersion": 2,
+    "preStateVersion": 2,
+    "readsStateVar": 2,
+    "targetsStateVar": 8
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 26,
+    "stage2_ir": 11,
+    "stage3_ssa": 15,
+    "stage4_control": 57,
+    "stage5_highlevel": 5
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 31,
+    "stage2_ir": 9,
+    "stage3_ssa": 8,
+    "stage4_control": 71,
+    "stage5_highlevel": 12
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+      "source_file": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 2,
+        "Function": 5,
+        "Modifier": 3,
+        "Stmt": 6,
+        "Assignment": 5,
+        "FunctionCall": 4
+      },
+      "edge_counts": {
+        "hasStateVar": 2,
+        "hasFunction": 5,
+        "hasModifier": 3,
+        "containsStmt": 6,
+        "entryPointIs": 5,
+        "containsAssignment": 5,
+        "hasNext": 1,
+        "containsCall": 4
+      },
+      "functions": [
+        "initTokenBank",
+        "constructor",
+        "Deposit",
+        "WitdrawTokenToHolder",
+        "WithdrawToHolder"
+      ],
+      "state_vars": [
+        "MinDeposit",
+        "Holders"
+      ],
+      "original_contract_name": "TokenBank"
+    },
+    "stage2_ir": {
+      "sample_name": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+      "source_file": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+      "ir_file": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839_ir.txt",
+      "node_counts": {
+        "ExternalCall": 2,
+        "InternalCall": 2,
+        "StateWrite": 2,
+        "StateRead": 5
+      },
+      "edge_counts": {
+        "targetsStateVar": 7,
+        "readsStateVar": 2
+      },
+      "external_calls": 3,
+      "internal_calls": 2,
+      "state_writes": 2,
+      "state_reads": 5,
+      "raw_ir_blocks": 49
+    },
+    "stage3_ssa": {
+      "sample_name": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+      "source_file": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+      "ssa_file": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839_ssa.txt",
+      "node_counts": {
+        "VersionedState": 13,
+        "CommitPoint": 2
+      },
+      "edge_counts": {
+        "commitsVar": 2,
+        "preStateVersion": 2,
+        "postStateVersion": 2,
+        "commitsState": 2
+      },
+      "raw_ssa_blocks": 49,
+      "version_states": 13,
+      "commit_points": 2,
+      "linked_statewrites": 2
+    },
+    "stage4_control": {
+      "sample_name": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+      "source_file": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+      "functions": 10,
+      "cfg_functions_found": 10,
+      "cfg_nodes": 42,
+      "cfg_edges": 64,
+      "callgraph_edges": 7,
+      "conditional_nodes": 10,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-changeOwner(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-confirmOwner().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-Deposit().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-fallback().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-initTokenBank().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-onlyOwner().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-slitherConstructorVariables().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-WitdrawTokenToHolder(address,address,uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-WithdrawToHolder(address,uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\cfg__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol-TokenBank-WithdrawToken(address,uint256,address).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839\\call-graph__0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol.TokenBank.call-graph.dot",
+      "actual_contract_name": "TokenBank"
+    },
+    "stage5_highlevel": {
+      "sample_name": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839",
+      "source_file": "0x627fa62ccbb1c1b04ffaecd72a53e37fc0e17839.sol",
+      "external_call_sites": 1,
+      "critical_state_writes": 1,
+      "state_guards": 1,
+      "call_before_effect": 1,
+      "reentrancy_candidates": 1,
+      "functions_with_candidates": [
+        "WithdrawToHolder"
+      ]
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 1,
+    "critical_state_writes": 1,
+    "state_guards": 1,
+    "call_before_effect": 1,
+    "reentrancy_candidates": 1,
+    "functions_with_candidates": [
+      "WithdrawToHolder"
+    ]
+  }
+}

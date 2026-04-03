@@ -1,0 +1,747 @@
+{
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.PrivateDeposit.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.PrivateDeposit()",
+    "function_name": "PrivateDeposit",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.PrivateDeposit.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.PrivateDeposit()",
+    "function_name": "PrivateDeposit",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: owner = msg.sender\n\t\tIRs:\n\t\t\towner(address) := msg.sender(address)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.PrivateDeposit.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.PrivateDeposit()",
+    "function_name": "PrivateDeposit",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: TransferLog = new Log()\n\t\tIRs:\n\t\t\tTMP_1(Log) = new Log() \n\t\t\tTransferLog(Log) := TMP_1(Log)\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.setLog.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.setLog(address)",
+    "function_name": "setLog",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.setLog.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.setLog(address)",
+    "function_name": "setLog",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: TransferLog = Log(_lib)\n\t\tIRs:\n\t\t\tTMP_2 = CONVERT _lib to Log\n\t\t\tTransferLog(Log) := TMP_2(Log)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.setLog.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.setLog(address)",
+    "function_name": "setLog",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: onlyOwner()\n\t\tIRs:\n\t\t\tMODIFIER_CALL, PrivateDeposit.onlyOwner()()\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: IF\n\t\tExpression: msg.value >= MinDeposit\n\t\tIRs:\n\t\t\tTMP_4(bool) = msg.value >= MinDeposit\n\t\t\tCONDITION TMP_4\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: balances[msg.sender] += msg.value\n\t\tIRs:\n\t\t\tREF_0(uint256) -> balances[msg.sender]\n\t\t\tREF_0(-> balances) = REF_0 + msg.value\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.2": {
+    "ref": "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.2",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.2.1": {
+    "ref": "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.2",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.3": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: TransferLog.AddMessage(msg.sender,msg.value,Deposit)\n\t\tIRs:\n\t\t\tHIGH_LEVEL_CALL, dest:TransferLog(Log), function:AddMessage, arguments:['msg.sender', 'msg.value', 'Deposit']  \n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.3": {
+    "ref": "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.3",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.4": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: END_IF\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: IF\n\t\tExpression: _am <= balances[msg.sender]\n\t\tIRs:\n\t\t\tREF_2(uint256) -> balances[msg.sender]\n\t\t\tTMP_6(bool) = _am <= REF_2\n\t\t\tCONDITION TMP_6\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "stateread:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.1.1": {
+    "ref": "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.1",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: IF\n\t\tExpression: msg.sender.call.value(_am)()\n\t\tIRs:\n\t\t\tTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \n\t\t\tCONDITION TMP_8\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.2": {
+    "ref": "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.2",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.3": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: balances[msg.sender] -= _am\n\t\tIRs:\n\t\t\tREF_5(uint256) -> balances[msg.sender]\n\t\t\tREF_5(-> balances) = REF_5 - _am\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "statewrite:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.3": {
+    "ref": "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.3",
+    "_layers": [
+      "stage2_ir",
+      "stage3_ssa"
+    ]
+  },
+  "stateread:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.3.1": {
+    "ref": "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.3",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.4": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: TransferLog.AddMessage(msg.sender,_am,CashOut)\n\t\tIRs:\n\t\t\tHIGH_LEVEL_CALL, dest:TransferLog(Log), function:AddMessage, arguments:['msg.sender', '_am', 'CashOut']  \n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "externalcall:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.4": {
+    "ref": "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.4",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.5": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ir_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: END_IF\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.6": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ir_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: END_IF\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.fallback.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.fallback()",
+    "function_name": "fallback",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\n\n\nContract Log",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: LastMsg.Sender = _adr\n\t\tIRs:\n\t\t\tREF_7(address) -> LastMsg.Sender\n\t\t\tREF_7(address) (->LastMsg) := _adr(address)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: LastMsg.Time = now\n\t\tIRs:\n\t\t\tREF_8(uint256) -> LastMsg.Time\n\t\t\tREF_8(uint256) (->LastMsg) := now(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.3": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: LastMsg.Val = _val\n\t\tIRs:\n\t\t\tREF_9(uint256) -> LastMsg.Val\n\t\t\tREF_9(uint256) (->LastMsg) := _val(uint256)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.4": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: LastMsg.Data = _data\n\t\tIRs:\n\t\t\tREF_10(string) -> LastMsg.Data\n\t\t\tREF_10(string) (->LastMsg) := _data(string)\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ir:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.5": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ir_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: History.push(LastMsg)\n\t\tIRs:\n\t\t\tREF_12 -> LENGTH History\n\t\t\tTMP_13(uint256) := REF_12(uint256)\n\t\t\tTMP_14(uint256) = TMP_13 + 1\n\t\t\tREF_12(uint256) (->History) := TMP_14(uint256)\n\t\t\tREF_13(Log.Message) -> History[TMP_13]\n\t\t\tREF_13(Log.Message) (->History) := LastMsg(Log.Message)\n\n\n",
+    "_layers": [
+      "stage2_ir"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.PrivateDeposit.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.PrivateDeposit()",
+    "function_name": "PrivateDeposit",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.PrivateDeposit.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.PrivateDeposit()",
+    "function_name": "PrivateDeposit",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: owner = msg.sender\n\t\tSSA IRs:\n\t\t\towner_1(address) := msg.sender(address)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.PrivateDeposit.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.PrivateDeposit()",
+    "function_name": "PrivateDeposit",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: TransferLog = new Log()\n\t\tSSA IRs:\n\t\t\tTMP_1(Log) = new Log() \n\t\t\tTransferLog_1(Log) := TMP_1(Log)\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.setLog.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.setLog(address)",
+    "function_name": "setLog",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.setLog.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.setLog(address)",
+    "function_name": "setLog",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: TransferLog = Log(_lib)\n\t\tSSA IRs:\n\t\t\tTMP_2 = CONVERT _lib_1 to Log\n\t\t\tTransferLog_2(Log) := TMP_2(Log)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.setLog.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.setLog(address)",
+    "function_name": "setLog",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: onlyOwner()\n\t\tSSA IRs:\n\t\t\tMODIFIER_CALL, PrivateDeposit.onlyOwner()()\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tbalances_1(mapping(address => uint256)) := ϕ(['balances_3', 'balances_0', 'balances_2', 'balances_4', 'balances_5'])\n\t\t\tMinDeposit_1(uint256) := ϕ(['MinDeposit_0'])\n\t\t\tTransferLog_3(Log) := ϕ(['TransferLog_2', 'TransferLog_6', 'TransferLog_0', 'TransferLog_1', 'TransferLog_7', 'TransferLog_4'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: IF\n\t\tExpression: msg.value >= MinDeposit\n\t\tSSA IRs:\n\t\t\tTMP_4(bool) = msg.value >= MinDeposit_1\n\t\t\tCONDITION TMP_4\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: balances[msg.sender] += msg.value\n\t\tSSA IRs:\n\t\t\tREF_0(uint256) -> balances_1[msg.sender]\n\t\t\tbalances_2(mapping(address => uint256)) := ϕ(['balances_1'])\n\t\t\tREF_0(-> balances_2) = REF_0 + msg.value\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.2__stage3_ssa": {
+    "ref": "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.2"
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.3": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: TransferLog.AddMessage(msg.sender,msg.value,Deposit)\n\t\tSSA IRs:\n\t\t\tHIGH_LEVEL_CALL, dest:TransferLog_3(Log), function:AddMessage, arguments:['msg.sender', 'msg.value', 'Deposit']  \n\t\t\tTransferLog_4(Log) := ϕ(['TransferLog_2', 'TransferLog_3', 'TransferLog_6', 'TransferLog_1', 'TransferLog_7', 'TransferLog_4'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.4": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.Deposit()",
+    "function_name": "Deposit",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: END_IF\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tbalances_3(mapping(address => uint256)) := ϕ(['balances_3', 'balances_0', 'balances_2', 'balances_4', 'balances_5'])\n\t\t\tTransferLog_5(Log) := ϕ(['TransferLog_2', 'TransferLog_6', 'TransferLog_0', 'TransferLog_1', 'TransferLog_7', 'TransferLog_4'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: IF\n\t\tExpression: _am <= balances[msg.sender]\n\t\tSSA IRs:\n\t\t\tREF_2(uint256) -> balances_3[msg.sender]\n\t\t\tTMP_6(bool) = _am_1 <= REF_2\n\t\t\tCONDITION TMP_6\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: IF\n\t\tExpression: msg.sender.call.value(_am)()\n\t\tSSA IRs:\n\t\t\tTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am_1 \n\t\t\tbalances_4(mapping(address => uint256)) := ϕ(['balances_2', 'balances_5', 'balances_4', 'balances_3'])\n\t\t\tTransferLog_6(Log) := ϕ(['TransferLog_2', 'TransferLog_6', 'TransferLog_1', 'TransferLog_5', 'TransferLog_7', 'TransferLog_4'])\n\t\t\tCONDITION TMP_8\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.3": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: balances[msg.sender] -= _am\n\t\tSSA IRs:\n\t\t\tREF_5(uint256) -> balances_4[msg.sender]\n\t\t\tbalances_5(mapping(address => uint256)) := ϕ(['balances_4'])\n\t\t\tREF_5(-> balances_5) = REF_5 - _am_1\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "statewrite:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.3__stage3_ssa": {
+    "ref": "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.3"
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.4": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: TransferLog.AddMessage(msg.sender,_am,CashOut)\n\t\tSSA IRs:\n\t\t\tHIGH_LEVEL_CALL, dest:TransferLog_6(Log), function:AddMessage, arguments:['msg.sender', '_am_1', 'CashOut']  \n\t\t\tTransferLog_7(Log) := ϕ(['TransferLog_2', 'TransferLog_6', 'TransferLog_1', 'TransferLog_7', 'TransferLog_4'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.5": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ssa_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: END_IF\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.6": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.CashOut(uint256)",
+    "function_name": "CashOut",
+    "ssa_stmt_index": 6,
+    "raw": "\t\tNode[6] Type: END_IF\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.fallback.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "PrivateDeposit.fallback()",
+    "function_name": "fallback",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\n\n\nContract Log",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.0": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 0,
+    "raw": "\t\tNode[0] Type: ENTRY_POINT\n\t\tSSA IRs:\n\t\t\tHistory_1(Log.Message[]) := ϕ(['History_3', 'History_0'])\n\t\t\tLastMsg_1(Log.Message) := ϕ(['LastMsg_0', 'LastMsg_5'])\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 1,
+    "raw": "\t\tNode[1] Type: EXPRESSION\n\t\tExpression: LastMsg.Sender = _adr\n\t\tSSA IRs:\n\t\t\tREF_7(address) -> LastMsg_1.Sender\n\t\t\tLastMsg_2(Log.Message) := ϕ(['LastMsg_1'])\n\t\t\tREF_7(address) (->LastMsg_2) := _adr_1(address)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 2,
+    "raw": "\t\tNode[2] Type: EXPRESSION\n\t\tExpression: LastMsg.Time = now\n\t\tSSA IRs:\n\t\t\tREF_8(uint256) -> LastMsg_2.Time\n\t\t\tLastMsg_3(Log.Message) := ϕ(['LastMsg_2'])\n\t\t\tREF_8(uint256) (->LastMsg_3) := now(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.3": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 3,
+    "raw": "\t\tNode[3] Type: EXPRESSION\n\t\tExpression: LastMsg.Val = _val\n\t\tSSA IRs:\n\t\t\tREF_9(uint256) -> LastMsg_3.Val\n\t\t\tLastMsg_4(Log.Message) := ϕ(['LastMsg_3'])\n\t\t\tREF_9(uint256) (->LastMsg_4) := _val_1(uint256)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.4": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 4,
+    "raw": "\t\tNode[4] Type: EXPRESSION\n\t\tExpression: LastMsg.Data = _data\n\t\tSSA IRs:\n\t\t\tREF_10(string) -> LastMsg_4.Data\n\t\t\tLastMsg_5(Log.Message) := ϕ(['LastMsg_4'])\n\t\t\tREF_10(string) (->LastMsg_5) := _data_1(string)\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "raw_ssa:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.AddMessage.5": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function": "Log.AddMessage(address,uint256,string)",
+    "function_name": "AddMessage",
+    "ssa_stmt_index": 5,
+    "raw": "\t\tNode[5] Type: EXPRESSION\n\t\tExpression: History.push(LastMsg)\n\t\tSSA IRs:\n\t\t\tREF_12 -> LENGTH History_1\n\t\t\tTMP_13(uint256) := REF_12(uint256)\n\t\t\tTMP_14(uint256) = TMP_13 + 1\n\t\t\tHistory_2(Log.Message[]) := ϕ(['History_1'])\n\t\t\tREF_12(uint256) (->History_2) := TMP_14(uint256)\n\t\t\tREF_13(Log.Message) -> History_2[TMP_13]\n\t\t\tHistory_3(Log.Message[]) := ϕ(['History_2'])\n\t\t\tREF_13(Log.Message) (->History_3) := LastMsg_5(Log.Message)\n\n\n",
+    "_layers": [
+      "stage3_ssa"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "CashOut",
+    "function_signature": "CashOut(uint256)",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: IF 2\n\nEXPRESSION:\nmsg.sender.call.value(_am)()\n\nIRs:\nTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \nCONDITION TMP_8",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-CashOut(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.4": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "CashOut",
+    "function_signature": "CashOut(uint256)",
+    "dot_node_id": "4",
+    "dot_label": "Node Type: EXPRESSION 4\n\nEXPRESSION:\nTransferLog.AddMessage(msg.sender,_am,CashOut)\n\nIRs:\nHIGH_LEVEL_CALL, dest:TransferLog(Log), function:AddMessage, arguments:['msg.sender', '_am', 'CashOut']  ",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-CashOut(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.5": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "CashOut",
+    "function_signature": "CashOut(uint256)",
+    "dot_node_id": "5",
+    "dot_label": "Node Type: END_IF 5\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-CashOut(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.6": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "CashOut",
+    "function_signature": "CashOut(uint256)",
+    "dot_node_id": "6",
+    "dot_label": "Node Type: END_IF 6\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-CashOut(uint256).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "Deposit",
+    "function_signature": "Deposit()",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: IF 1\n\nEXPRESSION:\nmsg.value >= MinDeposit\n\nIRs:\nTMP_4(bool) = msg.value >= MinDeposit\nCONDITION TMP_4",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-Deposit().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.3": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "Deposit",
+    "function_signature": "Deposit()",
+    "dot_node_id": "3",
+    "dot_label": "Node Type: EXPRESSION 3\n\nEXPRESSION:\nTransferLog.AddMessage(msg.sender,msg.value,Deposit)\n\nIRs:\nHIGH_LEVEL_CALL, dest:TransferLog(Log), function:AddMessage, arguments:['msg.sender', 'msg.value', 'Deposit']  ",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-Deposit().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.Deposit.4": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "Deposit",
+    "function_signature": "Deposit()",
+    "dot_node_id": "4",
+    "dot_label": "Node Type: END_IF 4\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-Deposit().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.onlyOwner.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "onlyOwner",
+    "function_signature": "onlyOwner()",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: EXPRESSION 1\n\nEXPRESSION:\nrequire(bool)(tx.origin == owner)\n\nIRs:\nTMP_10(bool) = tx.origin == owner\nTMP_11(None) = SOLIDITY_CALL require(bool)(TMP_10)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-onlyOwner().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.onlyOwner.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "onlyOwner",
+    "function_signature": "onlyOwner()",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: _ 2\n",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-onlyOwner().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.PrivateDeposit.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "PrivateDeposit",
+    "function_signature": "PrivateDeposit()",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: EXPRESSION 1\n\nEXPRESSION:\nowner = msg.sender\n\nIRs:\nowner(address) := msg.sender(address)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-PrivateDeposit().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.PrivateDeposit.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "PrivateDeposit",
+    "function_signature": "PrivateDeposit()",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: EXPRESSION 2\n\nEXPRESSION:\nTransferLog = new Log()\n\nIRs:\nTMP_1(Log) = new Log() \nTransferLog(Log) := TMP_1(Log)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-PrivateDeposit().dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.setLog.1": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "setLog",
+    "function_signature": "setLog(address)",
+    "dot_node_id": "1",
+    "dot_label": "Node Type: EXPRESSION 1\n\nEXPRESSION:\nTransferLog = Log(_lib)\n\nIRs:\nTMP_2 = CONVERT _lib to Log\nTransferLog(Log) := TMP_2(Log)",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-setLog(address).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "cfgnode:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.0x7a8721a9d64c74da899424c1b52acbf58ddc9782.setLog.2": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "contract_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "actual_contract_name": "PrivateDeposit",
+    "function_name": "setLog",
+    "function_signature": "setLog(address)",
+    "dot_node_id": "2",
+    "dot_label": "Node Type: EXPRESSION 2\n\nEXPRESSION:\nonlyOwner()\n\nIRs:\nMODIFIER_CALL, PrivateDeposit.onlyOwner()()",
+    "cfg_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-setLog(address).dot",
+    "_layers": [
+      "stage4_control"
+    ]
+  },
+  "reentrancycandidate:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.2.balances": {
+    "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+    "function_name": "CashOut",
+    "state_var": "balances",
+    "external_call_node": "externalcall:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.2",
+    "external_call_stmt_index": 2,
+    "critical_write_nodes": [
+      "statewrite:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.3"
+    ],
+    "critical_write_stmt_indices": [
+      3
+    ],
+    "require_stmt_indices": [],
+    "pre_call_state_read_nodes": [
+      "stateread:0x7a8721a9d64c74da899424c1b52acbf58ddc9782.CashOut.1.1"
+    ],
+    "_layers": [
+      "stage5_highlevel"
+    ]
+  }
+}

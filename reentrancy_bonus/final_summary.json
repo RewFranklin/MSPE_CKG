@@ -1,0 +1,183 @@
+{
+  "sample_name": "reentrancy_bonus",
+  "source_file": "reentrancy_bonus.sol",
+  "total_nodes": 50,
+  "total_edges": 62,
+  "evidence_entries": 32,
+  "node_type_counts": {
+    "Assignment": 3,
+    "CFGEntry": 2,
+    "CFGExit": 2,
+    "CFGNode": 3,
+    "CommitPoint": 1,
+    "Contract": 1,
+    "ExternalCall": 1,
+    "ExternalCallSite": 1,
+    "Function": 2,
+    "FunctionCall": 3,
+    "FunctionRef": 1,
+    "InternalCall": 1,
+    "Modifier": 2,
+    "Require": 2,
+    "StateRead": 5,
+    "StateVar": 3,
+    "StateWrite": 1,
+    "Stmt": 8,
+    "VersionedState": 8
+  },
+  "relation_counts": {
+    "abstractsCall": 1,
+    "callsBuiltin": 2,
+    "callsExternal": 1,
+    "callsInternal": 1,
+    "commitsState": 1,
+    "commitsVar": 1,
+    "containsAssignment": 3,
+    "containsCall": 3,
+    "containsRequire": 2,
+    "containsStmt": 8,
+    "entryOf": 2,
+    "entryPointIs": 2,
+    "exitOf": 2,
+    "flowsToExit": 1,
+    "hasFunction": 2,
+    "hasModifier": 2,
+    "hasNext": 6,
+    "hasStateVar": 3,
+    "inFunction": 3,
+    "invokesInternal": 1,
+    "nextBlock": 1,
+    "postStateVersion": 1,
+    "preStateVersion": 1,
+    "readsStateVar": 5,
+    "targetsStateVar": 6,
+    "writesStateVar": 1
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 24,
+    "stage2_ir": 8,
+    "stage3_ssa": 9,
+    "stage4_control": 10,
+    "stage5_highlevel": 1
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 31,
+    "stage2_ir": 14,
+    "stage3_ssa": 4,
+    "stage4_control": 12,
+    "stage5_highlevel": 1
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "reentrancy_bonus",
+      "source_file": "reentrancy_bonus.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 3,
+        "Function": 2,
+        "Modifier": 2,
+        "Stmt": 8,
+        "Assignment": 3,
+        "FunctionCall": 3,
+        "Require": 2
+      },
+      "edge_counts": {
+        "hasStateVar": 3,
+        "hasFunction": 2,
+        "hasModifier": 2,
+        "containsStmt": 8,
+        "entryPointIs": 2,
+        "hasNext": 6,
+        "containsAssignment": 3,
+        "containsCall": 3,
+        "containsRequire": 2
+      },
+      "functions": [
+        "withdrawReward",
+        "getFirstWithdrawalBonus"
+      ],
+      "state_vars": [
+        "userBalances",
+        "claimedBonus",
+        "rewardsForA"
+      ],
+      "original_contract_name": "Reentrancy_bonus"
+    },
+    "stage2_ir": {
+      "sample_name": "reentrancy_bonus",
+      "source_file": "reentrancy_bonus.sol",
+      "ir_file": "reentrancy_bonus_ir.txt",
+      "node_counts": {
+        "StateRead": 5,
+        "ExternalCall": 1,
+        "StateWrite": 1,
+        "InternalCall": 1
+      },
+      "edge_counts": {
+        "readsStateVar": 5,
+        "targetsStateVar": 6,
+        "callsExternal": 1,
+        "writesStateVar": 1,
+        "invokesInternal": 1
+      },
+      "external_calls": 1,
+      "internal_calls": 1,
+      "state_writes": 1,
+      "state_reads": 5,
+      "raw_ir_blocks": 10
+    },
+    "stage3_ssa": {
+      "sample_name": "reentrancy_bonus",
+      "source_file": "reentrancy_bonus.sol",
+      "ssa_file": "reentrancy_bonus_ssa.txt",
+      "node_counts": {
+        "VersionedState": 8,
+        "CommitPoint": 1
+      },
+      "edge_counts": {
+        "commitsVar": 1,
+        "preStateVersion": 1,
+        "postStateVersion": 1,
+        "commitsState": 1
+      },
+      "raw_ssa_blocks": 10,
+      "version_states": 8,
+      "commit_points": 1,
+      "linked_statewrites": 1
+    },
+    "stage4_control": {
+      "sample_name": "reentrancy_bonus",
+      "source_file": "reentrancy_bonus.sol",
+      "functions": 2,
+      "cfg_functions_found": 2,
+      "cfg_nodes": 7,
+      "cfg_edges": 9,
+      "callgraph_edges": 3,
+      "conditional_nodes": 0,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_bonus\\cfg__reentrancy_bonus.sol-Reentrancy_bonus-getFirstWithdrawalBonus(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_bonus\\cfg__reentrancy_bonus.sol-Reentrancy_bonus-withdrawReward(address).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\reentrancy_bonus\\call-graph__reentrancy_bonus.sol.Reentrancy_bonus.call-graph.dot",
+      "actual_contract_name": "Reentrancy_bonus"
+    },
+    "stage5_highlevel": {
+      "sample_name": "reentrancy_bonus",
+      "source_file": "reentrancy_bonus.sol",
+      "external_call_sites": 1,
+      "critical_state_writes": 0,
+      "state_guards": 0,
+      "call_before_effect": 0,
+      "reentrancy_candidates": 0,
+      "functions_with_candidates": []
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 1,
+    "critical_state_writes": 0,
+    "state_guards": 0,
+    "call_before_effect": 0,
+    "reentrancy_candidates": 0,
+    "functions_with_candidates": []
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "sample_name": "etherstore",
+  "source_file": "etherstore.sol",
+  "total_nodes": 67,
+  "total_edges": 94,
+  "evidence_entries": 32,
+  "node_type_counts": {
+    "Assignment": 3,
+    "CFGEntry": 3,
+    "CFGExit": 3,
+    "CFGNode": 2,
+    "CallBeforeEffect": 2,
+    "CommitPoint": 2,
+    "Contract": 1,
+    "CriticalStateWrite": 2,
+    "ExternalCall": 1,
+    "ExternalCallSite": 1,
+    "Function": 2,
+    "FunctionCall": 2,
+    "FunctionRef": 2,
+    "Modifier": 2,
+    "ReentrancyCandidate": 2,
+    "Require": 4,
+    "StateGuard": 5,
+    "StateRead": 5,
+    "StateVar": 3,
+    "StateWrite": 2,
+    "Stmt": 7,
+    "VersionedState": 11
+  },
+  "relation_counts": {
+    "abstractsCall": 1,
+    "abstractsStateWrite": 1,
+    "callsBuiltin": 1,
+    "callsExternal": 1,
+    "candidateInFunction": 2,
+    "candidateTargetsState": 2,
+    "commitsState": 2,
+    "commitsVar": 2,
+    "containsAssignment": 3,
+    "containsCall": 2,
+    "containsRequire": 4,
+    "containsStmt": 7,
+    "derivedFrom": 5,
+    "entryOf": 3,
+    "entryPointIs": 2,
+    "exitOf": 3,
+    "guardedBy": 8,
+    "hasCallBeforeEffect": 2,
+    "hasCriticalWrite": 4,
+    "hasExternalCall": 4,
+    "hasFunction": 2,
+    "hasModifier": 2,
+    "hasNext": 5,
+    "hasStateVar": 3,
+    "inFunction": 2,
+    "inferredFromAssignment": 1,
+    "postStateVersion": 2,
+    "preStateVersion": 2,
+    "readsStateVar": 5,
+    "targetsStateVar": 9,
+    "writesStateVar": 2
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 24,
+    "stage2_ir": 8,
+    "stage3_ssa": 13,
+    "stage4_control": 12,
+    "stage5_highlevel": 12
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 30,
+    "stage2_ir": 15,
+    "stage3_ssa": 8,
+    "stage4_control": 9,
+    "stage5_highlevel": 32
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "etherstore",
+      "source_file": "etherstore.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 3,
+        "Function": 2,
+        "Modifier": 2,
+        "Stmt": 7,
+        "Assignment": 3,
+        "Require": 4,
+        "FunctionCall": 2
+      },
+      "edge_counts": {
+        "hasStateVar": 3,
+        "hasFunction": 2,
+        "hasModifier": 2,
+        "containsStmt": 7,
+        "entryPointIs": 2,
+        "containsAssignment": 3,
+        "containsRequire": 4,
+        "hasNext": 5,
+        "containsCall": 2
+      },
+      "functions": [
+        "depositFunds",
+        "withdrawFunds"
+      ],
+      "state_vars": [
+        "withdrawalLimit",
+        "lastWithdrawTime",
+        "balances"
+      ],
+      "original_contract_name": "EtherStore"
+    },
+    "stage2_ir": {
+      "sample_name": "etherstore",
+      "source_file": "etherstore.sol",
+      "ir_file": "etherstore_ir.txt",
+      "node_counts": {
+        "StateWrite": 2,
+        "StateRead": 5,
+        "ExternalCall": 1
+      },
+      "edge_counts": {
+        "writesStateVar": 2,
+        "targetsStateVar": 7,
+        "readsStateVar": 5,
+        "callsExternal": 1
+      },
+      "external_calls": 1,
+      "internal_calls": 0,
+      "state_writes": 2,
+      "state_reads": 5,
+      "raw_ir_blocks": 9
+    },
+    "stage3_ssa": {
+      "sample_name": "etherstore",
+      "source_file": "etherstore.sol",
+      "ssa_file": "etherstore_ssa.txt",
+      "node_counts": {
+        "VersionedState": 11,
+        "CommitPoint": 2
+      },
+      "edge_counts": {
+        "commitsVar": 2,
+        "preStateVersion": 2,
+        "postStateVersion": 2,
+        "commitsState": 2
+      },
+      "raw_ssa_blocks": 9,
+      "version_states": 11,
+      "commit_points": 2,
+      "linked_statewrites": 2
+    },
+    "stage4_control": {
+      "sample_name": "etherstore",
+      "source_file": "etherstore.sol",
+      "functions": 3,
+      "cfg_functions_found": 3,
+      "cfg_nodes": 8,
+      "cfg_edges": 8,
+      "callgraph_edges": 1,
+      "conditional_nodes": 0,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\etherstore\\cfg__etherstore.sol-EtherStore-depositFunds().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\etherstore\\cfg__etherstore.sol-EtherStore-slitherConstructorVariables().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\etherstore\\cfg__etherstore.sol-EtherStore-withdrawFunds(uint256).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\etherstore\\call-graph__etherstore.sol.EtherStore.call-graph.dot",
+      "actual_contract_name": "EtherStore"
+    },
+    "stage5_highlevel": {
+      "sample_name": "etherstore",
+      "source_file": "etherstore.sol",
+      "external_call_sites": 1,
+      "critical_state_writes": 2,
+      "state_guards": 5,
+      "call_before_effect": 2,
+      "reentrancy_candidates": 2,
+      "functions_with_candidates": [
+        "withdrawFunds"
+      ]
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 1,
+    "critical_state_writes": 2,
+    "state_guards": 5,
+    "call_before_effect": 2,
+    "reentrancy_candidates": 2,
+    "functions_with_candidates": [
+      "withdrawFunds"
+    ]
+  }
+}

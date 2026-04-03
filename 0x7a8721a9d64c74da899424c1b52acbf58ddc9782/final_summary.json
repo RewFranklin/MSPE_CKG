@@ -1,0 +1,196 @@
+{
+  "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+  "source_file": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+  "total_nodes": 95,
+  "total_edges": 103,
+  "evidence_entries": 74,
+  "node_type_counts": {
+    "Assignment": 5,
+    "CFGEntry": 7,
+    "CFGExit": 7,
+    "CFGNode": 13,
+    "CallBeforeEffect": 1,
+    "CommitPoint": 2,
+    "Contract": 1,
+    "CriticalStateWrite": 1,
+    "ExternalCall": 3,
+    "ExternalCallSite": 3,
+    "Function": 5,
+    "FunctionCall": 6,
+    "FunctionRef": 4,
+    "Modifier": 4,
+    "ReentrancyCandidate": 1,
+    "StateGuard": 1,
+    "StateRead": 3,
+    "StateVar": 4,
+    "StateWrite": 2,
+    "Stmt": 5,
+    "VersionedState": 17
+  },
+  "relation_counts": {
+    "abstractsCall": 3,
+    "abstractsStateWrite": 1,
+    "branchTo": 2,
+    "callsInternal": 1,
+    "candidateInFunction": 1,
+    "candidateTargetsState": 1,
+    "commitsState": 2,
+    "commitsVar": 2,
+    "containsAssignment": 5,
+    "containsCall": 6,
+    "containsStmt": 5,
+    "derivedFrom": 1,
+    "entryOf": 7,
+    "entryPointIs": 4,
+    "exitOf": 7,
+    "flowsToExit": 5,
+    "guardedBy": 1,
+    "hasCallBeforeEffect": 1,
+    "hasCriticalWrite": 2,
+    "hasExternalCall": 2,
+    "hasFunction": 5,
+    "hasModifier": 4,
+    "hasNext": 1,
+    "hasStateVar": 4,
+    "inFunction": 13,
+    "nextBlock": 6,
+    "postStateVersion": 2,
+    "preStateVersion": 2,
+    "readsStateVar": 1,
+    "targetsStateVar": 6
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 30,
+    "stage2_ir": 8,
+    "stage3_ssa": 19,
+    "stage4_control": 35,
+    "stage5_highlevel": 7
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 34,
+    "stage2_ir": 6,
+    "stage3_ssa": 8,
+    "stage4_control": 41,
+    "stage5_highlevel": 14
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+      "source_file": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 4,
+        "Function": 5,
+        "Modifier": 4,
+        "Stmt": 5,
+        "Assignment": 5,
+        "FunctionCall": 6
+      },
+      "edge_counts": {
+        "hasStateVar": 4,
+        "hasFunction": 5,
+        "hasModifier": 4,
+        "containsStmt": 5,
+        "entryPointIs": 4,
+        "containsAssignment": 5,
+        "hasNext": 1,
+        "containsCall": 6
+      },
+      "functions": [
+        "PrivateDeposit",
+        "setLog",
+        "Deposit",
+        "CashOut",
+        "constructor"
+      ],
+      "state_vars": [
+        "balances",
+        "MinDeposit",
+        "owner",
+        "TransferLog"
+      ],
+      "original_contract_name": "PrivateDeposit"
+    },
+    "stage2_ir": {
+      "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+      "source_file": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+      "ir_file": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782_ir.txt",
+      "node_counts": {
+        "StateWrite": 2,
+        "StateRead": 3,
+        "ExternalCall": 3
+      },
+      "edge_counts": {
+        "targetsStateVar": 5,
+        "readsStateVar": 1
+      },
+      "external_calls": 3,
+      "internal_calls": 0,
+      "state_writes": 2,
+      "state_reads": 3,
+      "raw_ir_blocks": 25
+    },
+    "stage3_ssa": {
+      "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+      "source_file": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+      "ssa_file": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782_ssa.txt",
+      "node_counts": {
+        "VersionedState": 17,
+        "CommitPoint": 2
+      },
+      "edge_counts": {
+        "commitsVar": 2,
+        "preStateVersion": 2,
+        "postStateVersion": 2,
+        "commitsState": 2
+      },
+      "raw_ssa_blocks": 25,
+      "version_states": 17,
+      "commit_points": 2,
+      "linked_statewrites": 2
+    },
+    "stage4_control": {
+      "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+      "source_file": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+      "functions": 7,
+      "cfg_functions_found": 7,
+      "cfg_nodes": 27,
+      "cfg_edges": 40,
+      "callgraph_edges": 1,
+      "conditional_nodes": 5,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-CashOut(uint256).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-Deposit().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-fallback().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-onlyOwner().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-PrivateDeposit().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-setLog(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\cfg__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol-PrivateDeposit-slitherConstructorVariables().dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\0x7a8721a9d64c74da899424c1b52acbf58ddc9782\\call-graph__0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol.PrivateDeposit.call-graph.dot",
+      "actual_contract_name": "PrivateDeposit"
+    },
+    "stage5_highlevel": {
+      "sample_name": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782",
+      "source_file": "0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol",
+      "external_call_sites": 3,
+      "critical_state_writes": 1,
+      "state_guards": 1,
+      "call_before_effect": 1,
+      "reentrancy_candidates": 1,
+      "functions_with_candidates": [
+        "CashOut"
+      ]
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 3,
+    "critical_state_writes": 1,
+    "state_guards": 1,
+    "call_before_effect": 1,
+    "reentrancy_candidates": 1,
+    "functions_with_candidates": [
+      "CashOut"
+    ]
+  }
+}

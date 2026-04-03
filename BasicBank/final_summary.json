@@ -1,0 +1,204 @@
+{
+  "sample_name": "BasicBank",
+  "source_file": "BasicBank.sol",
+  "total_nodes": 73,
+  "total_edges": 93,
+  "evidence_entries": 38,
+  "node_type_counts": {
+    "Assignment": 4,
+    "CFGEntry": 5,
+    "CFGExit": 5,
+    "CFGNode": 3,
+    "CallBeforeEffect": 1,
+    "CommitPoint": 3,
+    "Contract": 1,
+    "CriticalStateWrite": 2,
+    "ExternalCall": 1,
+    "ExternalCallSite": 1,
+    "Function": 4,
+    "FunctionCall": 2,
+    "FunctionRef": 2,
+    "InternalCall": 1,
+    "Modifier": 4,
+    "ReentrancyCandidate": 1,
+    "Require": 1,
+    "StateGuard": 1,
+    "StateRead": 4,
+    "StateVar": 3,
+    "StateWrite": 3,
+    "Stmt": 7,
+    "VersionedState": 14
+  },
+  "relation_counts": {
+    "abstractsCall": 1,
+    "abstractsStateWrite": 2,
+    "callsBuiltin": 1,
+    "callsExternal": 1,
+    "callsInternal": 1,
+    "candidateInFunction": 1,
+    "candidateTargetsState": 1,
+    "commitsState": 3,
+    "commitsVar": 3,
+    "containsAssignment": 4,
+    "containsCall": 2,
+    "containsRequire": 1,
+    "containsStmt": 7,
+    "derivedFrom": 1,
+    "entryOf": 5,
+    "entryPointIs": 4,
+    "exitOf": 5,
+    "flowsToExit": 1,
+    "guardedBy": 1,
+    "hasCallBeforeEffect": 1,
+    "hasCriticalWrite": 4,
+    "hasExternalCall": 2,
+    "hasFunction": 4,
+    "hasModifier": 4,
+    "hasNext": 3,
+    "hasStateVar": 3,
+    "inFunction": 3,
+    "invokesInternal": 1,
+    "nextBlock": 1,
+    "postStateVersion": 3,
+    "preStateVersion": 3,
+    "readsStateVar": 4,
+    "targetsStateVar": 9,
+    "writesStateVar": 3
+  },
+  "layer_node_counts_raw": {
+    "stage1_ast": 26,
+    "stage2_ir": 9,
+    "stage3_ssa": 17,
+    "stage4_control": 19,
+    "stage5_highlevel": 6
+  },
+  "layer_edge_counts_raw": {
+    "stage1_ast": 32,
+    "stage2_ir": 16,
+    "stage3_ssa": 12,
+    "stage4_control": 17,
+    "stage5_highlevel": 16
+  },
+  "layer_summaries": {
+    "stage1_ast": {
+      "sample_name": "BasicBank",
+      "source_file": "BasicBank.sol",
+      "node_counts": {
+        "Contract": 1,
+        "StateVar": 3,
+        "Function": 4,
+        "Modifier": 4,
+        "Stmt": 7,
+        "Assignment": 4,
+        "Require": 1,
+        "FunctionCall": 2
+      },
+      "edge_counts": {
+        "hasStateVar": 3,
+        "hasFunction": 4,
+        "hasModifier": 4,
+        "containsStmt": 7,
+        "entryPointIs": 4,
+        "containsAssignment": 4,
+        "containsRequire": 1,
+        "containsCall": 2,
+        "hasNext": 3
+      },
+      "functions": [
+        "constructor",
+        "deposit",
+        "withdraw",
+        "getBalance"
+      ],
+      "state_vars": [
+        "userFunds",
+        "commissionCollector",
+        "collectedComission"
+      ],
+      "original_contract_name": "source"
+    },
+    "stage2_ir": {
+      "sample_name": "BasicBank",
+      "source_file": "BasicBank.sol",
+      "ir_file": "BasicBank_ir.txt",
+      "node_counts": {
+        "StateWrite": 3,
+        "StateRead": 4,
+        "InternalCall": 1,
+        "ExternalCall": 1
+      },
+      "edge_counts": {
+        "writesStateVar": 3,
+        "targetsStateVar": 7,
+        "readsStateVar": 4,
+        "invokesInternal": 1,
+        "callsExternal": 1
+      },
+      "external_calls": 1,
+      "internal_calls": 1,
+      "state_writes": 3,
+      "state_reads": 4,
+      "raw_ir_blocks": 11
+    },
+    "stage3_ssa": {
+      "sample_name": "BasicBank",
+      "source_file": "BasicBank.sol",
+      "ssa_file": "BasicBank_ssa.txt",
+      "node_counts": {
+        "VersionedState": 14,
+        "CommitPoint": 3
+      },
+      "edge_counts": {
+        "commitsVar": 3,
+        "preStateVersion": 3,
+        "postStateVersion": 3,
+        "commitsState": 3
+      },
+      "raw_ssa_blocks": 11,
+      "version_states": 14,
+      "commit_points": 3,
+      "linked_statewrites": 3
+    },
+    "stage4_control": {
+      "sample_name": "BasicBank",
+      "source_file": "BasicBank.sol",
+      "functions": 5,
+      "cfg_functions_found": 5,
+      "cfg_nodes": 13,
+      "cfg_edges": 15,
+      "callgraph_edges": 2,
+      "conditional_nodes": 0,
+      "cfg_dot_files": [
+        "D:\\learning\\MSPE-CKG\\graph_output\\BasicBank\\cfg__BasicBank.sol-BasicBank-constructor(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\BasicBank\\cfg__BasicBank.sol-BasicBank-deposit().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\BasicBank\\cfg__BasicBank.sol-BasicBank-getBalance(address).dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\BasicBank\\cfg__BasicBank.sol-BasicBank-slitherConstructorVariables().dot",
+        "D:\\learning\\MSPE-CKG\\graph_output\\BasicBank\\cfg__BasicBank.sol-BasicBank-withdraw(uint256).dot"
+      ],
+      "callgraph_dot_file": "D:\\learning\\MSPE-CKG\\graph_output\\BasicBank\\call-graph__BasicBank.sol.BasicBank.call-graph.dot",
+      "actual_contract_name": "BasicBank"
+    },
+    "stage5_highlevel": {
+      "sample_name": "BasicBank",
+      "source_file": "BasicBank.sol",
+      "external_call_sites": 1,
+      "critical_state_writes": 2,
+      "state_guards": 1,
+      "call_before_effect": 1,
+      "reentrancy_candidates": 1,
+      "functions_with_candidates": [
+        "withdraw"
+      ]
+    }
+  },
+  "highlevel_overview": {
+    "external_call_sites": 1,
+    "critical_state_writes": 2,
+    "state_guards": 1,
+    "call_before_effect": 1,
+    "reentrancy_candidates": 1,
+    "functions_with_candidates": [
+      "withdraw"
+    ]
+  }
+}
